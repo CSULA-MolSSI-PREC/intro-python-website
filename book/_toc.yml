@@ -1,4 +1,7 @@
-format: jb-article
+format: jb-book
 root: intro
-sections:
+chapters:
 - file: setup
+- file: overview
+  sections:
+  - file: 01-python-introduction
