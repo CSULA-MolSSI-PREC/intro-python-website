@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python &#8212; MolSSI and Cal State LA Workshop</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Day 1 - Introduction to Python" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FHKVGE8HKZ"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-FHKVGE8HKZ');
+                </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/molssi_main_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MolSSI and Cal State LA Workshop</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="setup.html">
+   Set Up
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Day 1 - Introduction to Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MolSSI-Education/WORKSHOP_NAME/main?urlpath=tree/book/01-python-introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2F01-python-introduction.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/01-python-introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-jupyter-notebook">
+   Setting up your Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assigning-variables">
+   Assigning variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-multipe-variables-at-once">
+     Assigning multipe variables at once
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   Data Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slices">
+   Slices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repeating-an-operation-many-times-for-loops">
+   Repeating an operation many times: for loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-choices-logic-statements">
+   Making choices: logic statements
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-jupyter-notebook">
+   Setting up your Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assigning-variables">
+   Assigning variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-multipe-variables-at-once">
+     Assigning multipe variables at once
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   Data Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slices">
+   Slices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repeating-an-operation-many-times-for-loops">
+   Repeating an operation many times: for loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-choices-logic-statements">
+   Making choices: logic statements
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+<div class="overview admonition">
+<p class="admonition-title">Overview</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>What is the basic syntax of the Python programming language?</p></li>
+</ul>
+<p>Objectives:</p>
+<ul class="simple">
+<li><p>Assign values to variables.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to check how the code is working.</p></li>
+<li><p>Use multiple assignment to assign several variables at once.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to perform the same action on all the items in a list.</p></li>
+<li><p>Use the append function to create new lists in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p></li>
+</ul>
+</div>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<p>Python is a computer programming language that has become ubiquitous in scientific programming.
+Our initial lessons will run python interactively through a Python interpreter.
+We will first use a Jupyter notebook. The setup page should have provided information on how to install and start a Jupyter notebook.
+Everything included in a code block is something you could type into your python interpreter and evaluate.</p>
+</section>
+<section id="setting-up-your-jupyter-notebook">
+<h2>Setting up your Jupyter Notebook<a class="headerlink" href="#setting-up-your-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<p>In the setup, you learned how to start a Jupyter notebook.
+Now, we will use the notebook to execute Python code.
+Jupyter notebooks are divided into cells.
+You run a Jupyter notebook one cell at a time.
+To execute a cell, click inside the cell and press shift+enter.</p>
+<p>In the upper left corner, click where it says “Untitled” and change the name to “MolSSI Workshop”. We have now changed the name of the Jupyter Notebook.</p>
+<p>Jupyter notebooks allow us to also use something called markdown in some cells.
+We can use markdown to write descriptions about our notebooks for others to read.
+It’s a good practice to have your first cell be markdown to explain the purpose of the notebook. Let’s do that in our first cell.
+Click inside the first cell, then on the top of the screen select Cell-&gt;Cell Type-&gt;Markdown (shown below).</p>
+<p><img alt="jupyter-notebook" src="_images/lesson01_fig1.png" /></p>
+<p>Now, return to the cell and type the following:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># MolSSI Workshop</span>
+<span class="gu">## Introduction</span>
+
+
+This lesson covers Python basics like variable creation and assignment and using the Jupyter notebook
+</pre></div>
+</div>
+<p>In Markdown, we create headers using a single # sign. Using two (##) creates a subheader. After typing this into a cell, press <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code> to evaluate. Now your notebook should look like the following.</p>
+<p><img alt="jupyter-rendered" src="_images/lesson01_fig2.png" /></p>
+<p>Now that our notebook is set-up, we’re ready to start learning some Python!</p>
+</section>
+<section id="assigning-variables">
+<h2>Assigning variables<a class="headerlink" href="#assigning-variables" title="Permalink to this headline">#</a></h2>
+<p>Any Python interpreter can work just like a calculator.
+This is not very useful.
+Type the following into the next cell of your Jupyter notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>3 + 7
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, Python has performed a calculation for us. To save this value, or other values, we assign them to a variable for later use.
+The syntax for assigning variables is the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_name</span> <span class="o">=</span> <span class="n">varaible_value</span>
+</pre></div>
+</div>
+<p>Let’s see this in action with a calculation. Type the following into the next cell of your Jupyter notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>deltaH = -541.5   #kJ/mole
+deltaS =  10.4     #kJ/(mole K)
+temp = 298      #Kelvin
+deltaG = deltaH - temp * deltaS
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice several things about this code.
+The lines that begin with # are comment lines.
+The computer does not do anything with these comments.
+They have been used here to remind the user what units each of their values are in.
+Comments are also often used to explain what the code is doing or leave information for future people who might use the code.</p>
+<p>When choosing variable names, you should choose informative names so that someone reading your code can tell what they represent. Naming a variable temp or temperature is much more informative than naming that variable t.</p>
+<p>We can now access any of the variables from other cells. Let’s print the value that we calculated. In the next cell,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the previous code block, we introduced the <code class="docutils literal notranslate"><span class="pre">print</span></code> function. Often, we will use the print function just to make sure our code is working correctly.</p>
+<p>Note that if you do not specify a new name for a variable, then it doesn’t automatically change the value of the variable. For example if we typed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
+deltaG * 1000
+print(deltaG)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+-3640.7000000000003
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nothing happened to the value of deltaG. If we wanted to change the value of deltaG we would have to re-save the variable using the same name to overwrite the existing value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
+deltaG = deltaG * 1000
+print(deltaG)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+-3640700.0000000005
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are situations where it is reasonable to overwrite a variable with a new value, but you should always think carefully about this. Usually it is a better practice to give the variable a new name and leave the existing variable as is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
+deltaG_joules = deltaG * 1000
+print(deltaG)
+print(deltaG_joules)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640700.0000000005
+-3640700.0000000005
+-3640700000.0000005
+</pre></div>
+</div>
+</div>
+</div>
+<section id="assigning-multipe-variables-at-once">
+<h3>Assigning multipe variables at once<a class="headerlink" href="#assigning-multipe-variables-at-once" title="Permalink to this headline">#</a></h3>
+<p>Python can do what is called multiple assignment where you assign several variables their values on one line of code. The following code block does the exact same thing as the previous code block.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#I can assign all these variables at once
+deltaH, deltaS, temp = -541.5, 10.4, 298
+deltaG = deltaH - temp * deltaS
+print(deltaG)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
+<p>Each variable is some particular type of data.
+The most common types of data are strings (str),
+integers (int), and floating point numbers (float).
+You can identify the data type of any variable with the function <code class="docutils literal notranslate"><span class="pre">type(variable_name)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(deltaG)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can change the data type of a variable like this. This is called casting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>deltaG_string = str(deltaG)
+type(deltaG_string)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
+<p>Another common data structure in python is the list. Lists can be used to group several values or variables together, and are declared using square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>.
+List values are separated by commas.
+Python has several built in functions which can be used on lists.
+The built-in function <code class="docutils literal notranslate"><span class="pre">len</span></code> can be used to determine the length of a list.
+This code block also demonstrates how to print multiple variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This is a list
+energy_kcal = [-13.4, -2.7, 5.4, 42.1]
+# I can determine its length
+energy_length = len(energy_kcal)
+
+# print the list length
+print(&#39;The length of this list is&#39;, energy_length)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of this list is 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>If I want to operate on a particular element of the list, you use the list name and then put in brackets which element of the list you want. In python counting starts at zero. So the first element of the list is list[0].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Print the first element of the list
+print(energy_kcal[0])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-13.4
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use an element of a list as a variable in a calculation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Convert the second list element to kilojoules.
+energy_kilojoules = energy_kcal[1] * 4.184
+print(energy_kilojoules)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-11.296800000000001
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slices">
+<h2>Slices<a class="headerlink" href="#slices" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you will want to make a new list that is a subset of an existing list. For example, we might want to make a new list that is just the first few elements of our previous list. This is called a slice. The general syntax is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">list_name</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When taking a slice, it is very important to remember how counting works in python. Remember that counting starts at zero so the first element of a list is <code class="docutils literal notranslate"><span class="pre">list_name[0]</span></code>. When you specify the last element for the slice, it goes <em>up to but not including</em> that element of the list. So a slice like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>short_list = energy_kcal[0:2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>includes energy_kcal[0] and energy_kcal[1] but not energy_kcal[2].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(short_list)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13.4, -2.7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you do not include a start index, the slice automatically starts at list_name[0]. If you do not include an end index, the slice automatically goes to the end of the list.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Check your understanding</p>
+<p>What does the following code print?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">slice1</span> <span class="o">=</span> <span class="n">energy_kcal</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">slice2</span> <span class="o">=</span> <span class="n">energy_kcal</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slice1 is&#39;</span><span class="p">,</span> <span class="n">slice1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slice2 is&#39;</span><span class="p">,</span> <span class="n">slice2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>The code prints</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">slice1 is [-2.7, 5.4, 42.1]</span>
+<span class="go">slice2 is [-13.4, -2.7, 5.4]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="repeating-an-operation-many-times-for-loops">
+<h2>Repeating an operation many times: for loops<a class="headerlink" href="#repeating-an-operation-many-times-for-loops" title="Permalink to this headline">#</a></h2>
+<p>Often, you will want to do something to every element of a list. The structure to do this is called a for loop. The general structure of a for loop is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">things</span> <span class="n">using</span> <span class="n">variable</span>
+
+</pre></div>
+</div>
+<p>There are two very important pieces of syntax for the for loop. Notice the colon : after the word list. You will always have a colon at the end of a for statement. If you forget the colon, you will get an error when you try to run your code.</p>
+<p>The second thing to notice is that the lines of code under the for loop (the things you want to do several times) are indented. Indentation is very important in python. There is nothing like an end or exit statement that tells you that you are finished with the loop. The indentation shows you what statements are in the loop. Each indentation is 4 spaces by convention in Python 3. However, if you are using an editor which understands Python, it will do the correct indentation for you when you press the tab key on your keyboard. In fact, the Jupyter notebook will notice that you used a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) in the previous line, and will indent for you (so you will not need to press tab).</p>
+<p>Let’s use a loop to change all of our energies in kcal to kJ.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for number in energy_kcal:
+    kJ = number * 4.184
+    print(kJ)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-56.0656
+-11.296800000000001
+22.593600000000002
+176.1464
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now it seems like we are really getting somewhere with our program! But it would be even better if instead of just printing the values, it saved them in a new list. To do this, we are going to use the append function. The append function adds a new item to the end of an existing list. The general form of the append function is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_thing</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+for number in energy_kcal:
+    kJ = number * 4.184
+    energy_kJ.append(kJ)
+
+print(energy_kJ)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kcal</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">kJ</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mf">4.184</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">energy_kJ</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;energy_kJ&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code doesn’t work because on the first iteration of our loop, the list energy_kJ doesn’t exist. To make it work, we have to start the list outside of the loop. The list can be blank when we start it, but we have to start it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy_kJ = []
+for number in energy_kcal:
+    kJ = number * 4.184
+    energy_kJ.append(kJ)
+
+print(energy_kJ)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001, 22.593600000000002, 176.1464]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="making-choices-logic-statements">
+<h2>Making choices: logic statements<a class="headerlink" href="#making-choices-logic-statements" title="Permalink to this headline">#</a></h2>
+<p>Within your code, you may need to evaluate a variable and then do something if the variable has a particular value. This type of logic is handled by an if statement. In the following example, we only append the negative numbers to a new list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_energy_kJ = []
+
+for number in energy_kJ:
+    if number &lt; 0:
+        negative_energy_kJ.append(number)
+
+print(negative_energy_kJ)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other logic operations include</p>
+<ul class="simple">
+<li><p>equal to <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p>not equal to <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>greater than <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>less than <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>greater than or equal to <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p>less than or equal to <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+</ul>
+<p>You can also use and, or, and not to check more than one condition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_numbers = []
+for number in energy_kJ:
+    if number &lt; 0 or number == 0:
+        negative_numbers.append(number)
+
+print(negative_numbers)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To define what happens if the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is not met, you can use the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_numbers = []
+positive_numbers = []
+for number in energy_kJ:
+    if number &lt; 0 or number == 0:
+        negative_numbers.append(number)
+    else:
+        positive_numbers.append(number)
+
+print(&quot;Negative numbers:&quot;, negative_numbers)
+print(&quot;Positive Numbers: &quot;, positive_numbers)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Negative numbers: [-56.0656, -11.296800000000001]
+Positive Numbers:  [22.593600000000002, 176.1464]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>The following list contains some floating point numbers and some numbers which have been saved as strings. Copy this list exactly into your code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-12.5&#39;</span><span class="p">,</span> <span class="mf">14.4</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="s1">&#39;42&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Set up a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to go over each element of <code class="docutils literal notranslate"><span class="pre">data_list</span></code>. If the element is a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>), recast it as a float. Save all of the numbers to a new list called number_list. Pay close attention to your indentation!</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-12.5&#39;</span><span class="p">,</span> <span class="mf">14.4</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="s1">&#39;42&#39;</span><span class="p">]</span>
+<span class="n">number_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">number_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Day 1 - Introduction to Python</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Molecular Sciences Software Institute<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,4 +1,4 @@
-Workshop Template
+Overview
 ======================================
 
-This is a MolSSI template for creating a Jupyter book.
+MolSSI - Cal State LA PREC

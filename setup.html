@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Set Up &#8212; MolSSI Jupyter Book</title>
+    <title>Set Up &#8212; MolSSI and Cal State LA Workshop</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Workshop Template" href="intro.html" />
+    <link rel="next" title="Day 1 - Introduction to Python" href="overview.html" />
+    <link rel="prev" title="Overview" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/molssi_main_logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">MolSSI Jupyter Book</h1>
+      <h1 class="site-logo" id="site-title">MolSSI and Cal State LA Workshop</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -118,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Workshop Template
+                    Overview
                 </a>
             </li>
         </ul>
@@ -127,6 +128,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="current reference internal" href="#">
    Set Up
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="overview.html">
+   Day 1 - Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-python-introduction.html">
+     Introduction to Python
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -335,18 +353,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-python-through-anaconda">
-   Installing Python through Anaconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#obtain-lesson-materials">
-   Obtain lesson materials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-a-jupyter-notebook">
-   Start a Jupyter notebook
+  <a class="reference internal nav-link" href="#using-a-cloud-computing-environment">
+   Using a cloud computing environment
   </a>
  </li>
 </ul>
@@ -369,18 +377,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-python-through-anaconda">
-   Installing Python through Anaconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#obtain-lesson-materials">
-   Obtain lesson materials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-a-jupyter-notebook">
-   Start a Jupyter notebook
+  <a class="reference internal nav-link" href="#using-a-cloud-computing-environment">
+   Using a cloud computing environment
   </a>
  </li>
 </ul>
@@ -395,23 +393,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="set-up">
 <h1>Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">#</a></h1>
-<section id="installing-python-through-anaconda">
-<h2>Installing Python through Anaconda<a class="headerlink" href="#installing-python-through-anaconda" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://python.org/">Python</a> is a popular language for scientific computing, and great for general-purpose programming as well. Installing all of its scientific packages individually can be a bit difficult, however, so we recommend the all-in-one installer Anaconda.</p>
+<p>For this workshop, you will use a website called ChemCompute. ChemCompute is only accessible to users with an academic email address.</p>
+<section id="using-a-cloud-computing-environment">
+<h2>Using a cloud computing environment<a class="headerlink" href="#using-a-cloud-computing-environment" title="Permalink to this headline">#</a></h2>
+<p>You can access a cloud computing environment with computational chemistry software installed by using <a class="reference external" href="https://chemcompute.org/">ChemCompute</a>.</p>
 <ol class="simple">
-<li><p>Navigate to the <a class="reference external" href="https://www.anaconda.com/products/individual">download page</a> for Anaconda.</p></li>
-<li><p>Download the appropriate installer for your operating system. <strong>Make sure you get the installer listed under Python 3</strong> (not 2.7).</p></li>
-<li><p>Double click the installer icon and follow the set-up instructions, keeping most of the default options. If you are Windows, make sure to choose to choose the option <strong>Make Anaconda the default Python</strong> during installation.</p></li>
+<li><p><a class="reference external" href="https://chemcompute.org/register/">Register</a> for a ChemCompute account. The easiest thing to do is to choose “Sign in with your University Login” on the right. You can login using your university email. You will need to confirm account registration from an email chemcompute will send you.</p></li>
+<li><p>After confirming your account, you will be able to access a Jupyter notebook. The first time you start this workshop, you will need to get access to the files used in this workshop. Using the menu at the top, select “Jupyter” then “Clone a github repo to your notebook”</p></li>
+<li><p>There will be a form on the page. Enter FILL IN URL HERE into the URL field and click “Pull Repo”</p></li>
+<li><p>A Jupyter notebook environment with the files you need will start for you.</p></li>
 </ol>
-</section>
-<section id="obtain-lesson-materials">
-<h2>Obtain lesson materials<a class="headerlink" href="#obtain-lesson-materials" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="start-a-jupyter-notebook">
-<h2>Start a Jupyter notebook<a class="headerlink" href="#start-a-jupyter-notebook" title="Permalink to this headline">#</a></h2>
-<p>From Finder or Spotlight (Mac OS) or the Start Menu (Windows) find the Anaconda Navigator.  The icon looks like a green circle.  Click Launch under Jupyter Notebook.  It may take a few seconds to load the page, especially if it is the first time you have ever used the jupyter notebook, so don’t panic if nothing loads for a few seconds.  Then a new window should open in your default internet browser. Use the file navigation window to navigate to <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> and then to the <code class="docutils literal notranslate"><span class="pre">WORKSHOP_NAME</span></code> folder.  In the upper right hand corner, click New, then choose Python 3 from the dropdown list (shown below)</p>
-<img src="https://github.com/MolSSI-Education/python_scripting_cms/blob/gh-pages/fig/setup_fig1.png?raw=true" width="70%">
-<p>This will start a new Jupyter notebook using Python 3. You’re ready to go!</p>
+<p>You only have to complete these steps once. Every other time you access ChemCompute, you will click “Jupyter” then “Use Psi4 or JupyterHub”. Your files for this workshop will be in a folder called <code class="docutils literal notranslate"><span class="pre">prec-molssi-workshop</span></code>.</p>
 </section>
 </section>
 
@@ -446,8 +438,15 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop Template</p>
+            <p class="prev-next-title">Overview</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 1 - Introduction to Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
