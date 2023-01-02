@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Day 2 - Data Analysis and Plotting" href="day2-overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="setup.html">
    Set Up
@@ -150,6 +151,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="03-multiple-file.html">
      Processing Multiple Files and Writing Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="day2-overview.html">
+   Day 2 - Data Analysis and Plotting
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Analyzing Tabular Data
     </a>
    </li>
   </ul>
@@ -338,12 +356,78 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-in-tabular-data">
+   Reading in Tabular Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-data-in-the-data-frame">
+   Accessing Data in the Data Frame
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing">
+     Slicing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Analyzing Tabular Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-files-using-pandas">
+   Writing Files using Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-operations-and-filtering">
+   Mathematical Operations and Filtering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-and-numpy">
+   Pandas and NumPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-and-array-axes">
+   Dataframe and Array Axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your Turn
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -355,6 +439,61 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-in-tabular-data">
+   Reading in Tabular Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-data-in-the-data-frame">
+   Accessing Data in the Data Frame
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing">
+     Slicing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Analyzing Tabular Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-files-using-pandas">
+   Writing Files using Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-operations-and-filtering">
+   Mathematical Operations and Filtering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-and-numpy">
+   Pandas and NumPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-and-array-axes">
+   Dataframe and Array Axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your Turn
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -364,6 +503,288 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="analyzing-tabular-data">
 <h1>Analyzing Tabular Data<a class="headerlink" href="#analyzing-tabular-data" title="Permalink to this headline">#</a></h1>
+<div class="overview admonition">
+<p class="admonition-title">Overview</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>How do I work with data presented in tables?</p></li>
+</ul>
+<p>Objectives:</p>
+<ul class="simple">
+<li><p>Use functions in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read in tabular data.</p></li>
+<li><p>Access information in a data frame using column names and row numbers.</p></li>
+</ul>
+</div>
+<p>Most scientists work with a lot of numerical data. In this module we will focus on reading in and analyzing numerical data, visualizing the data, and working with arrays.</p>
+<section id="reading-in-tabular-data">
+<h2>Reading in Tabular Data<a class="headerlink" href="#reading-in-tabular-data" title="Permalink to this headline">#</a></h2>
+<p>As we already discussed, there are many ways to read in data from files in Python.
+In our last module, we used the readlines() function to read in a complex output file.
+In theory, you could always use the readlines() function, and then use the data parsing tools we learned in the previous module to format the data as you needed.
+But sometimes there are other ways that make more sense, particularly if the data is formatted in a table.</p>
+<p>A common table format is the <code class="docutils literal notranslate"><span class="pre">CSV</span></code> file or <code class="docutils literal notranslate"><span class="pre">comma</span> <span class="pre">separated</span> <span class="pre">values</span></code>.
+This is exactly what it sounds like.
+Data is presented in rows, with each value separated by a comma.
+If you have data in a spreadsheet program that you need to import into a python code, you can save the data as a csvfile to read it in.</p>
+<p>In this example, we have a CSV file that contains data from a molecular dynamics trajectory.
+We have a 20 ns simulation that used a 2 fs timestep.
+The data was saved to the trajectory file every 1000 steps, so our file has 10,000 timesteps.
+At each timestep, we are interested in the distance between particular atoms.
+These trajectories were generated with the AMBER molecular dynamics program and the distances were measured with the python program MDAnalysis.
+The table of atomic distances was saved as a CSV file called “distance_data_headers.csv”.
+This file was downloaded as part of your lesson materials.
+Open the file in a text editor and study it to determine its structure.</p>
+<p>In analyzing tabular data, we often need to perform the same types of calculations (averaging, calculating the minimum or maximum of the data set), so we are once again going to use a Python library, this time a library that contains lots of functions to work with tables.</p>
+<p>This library is called <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. When it is imported, it is usually shortened to <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function we will use is called <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.
+You can read more about this function in your Jupyter notebook by using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Library Documentation</p>
+<p>Most popular Python libraries have very good online documentation.
+You can find the pandas documentation by googling “pandas docs”.
+You will be able to find the same help message you get for <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> as well as tutorials and other types of documentation.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Pandas Documentation</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">read_csv</span></code> documentation</a></p></li>
+</ol>
+</div>
+<p>To get started, we will make a variable for our file path, then use that variable in the <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distance_file = &quot;data/distance_data_headers.csv&quot;
+
+distances = pd.read_csv(distance_file)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variable called <code class="docutils literal notranslate"><span class="pre">distances</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">dataframe</span></code>.
+When we want to look at a dataframe, we should not print it.
+We should instead put it as the last thing in a cell.
+This is because pandas dataframes are rendered in a special way in the Jupyter notebook.
+If you use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function with them, they will not look as nice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances
+</pre></div>
+</div>
+</div>
+</div>
+<p>This output gives us some information about what is in the dataframe.
+You can see that pandas made the first row in the file into headers.
+It also tells us that we have a table with 10,000 rows and 5 columns.</p>
+</section>
+<section id="accessing-data-in-the-data-frame">
+<h2>Accessing Data in the Data Frame<a class="headerlink" href="#accessing-data-in-the-data-frame" title="Permalink to this headline">#</a></h2>
+<p>One way to get information in a data frame is by using the headers, or the column names using squre brackets.
+The synatx for this is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;column_name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For example, to get the column “THR4_ATP”, we put the name in square brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ATP&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want multiple columns, you use a list of column names in square brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[[&quot;THR4_ATP&quot;, &quot;TYR6_ATP&quot;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to get information in the dataframe using row and column numbers, we use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> function.</p>
+<p>The syntax for <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_number</span><span class="p">,</span> <span class="n">column_number</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you specify only a row number, you will get all the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This will get the first row, all of the columns.
+distances.iloc[0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This will get the first row and the second column.
+distances.iloc[0, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Check Your Understanding</p>
+<p>How would you get the <code class="docutils literal notranslate"><span class="pre">THR4_ASP</span></code> column?</p>
+<p>How would you get the value in row index 10 of the <code class="docutils literal notranslate"><span class="pre">THR4_ASP</span></code> column?</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the THR4_ASP column</span>
+<span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ASP&quot;</span><span class="p">]</span>
+
+<span class="c1"># Get row 1o of the THR4_ASP column.</span>
+<span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ASP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<section id="slicing">
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h3>
+<p>Similar to lists, you can slice pandas dataframes when you use <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.
+This allows you to get a range of rows or columns.
+To take a slice, you use a colon:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_start</span><span class="p">:</span><span class="n">row_end</span><span class="p">,</span> <span class="n">column_start</span><span class="p">:</span><span class="n">column_end</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.iloc[0:10, :2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Analyzing Tabular Data<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>A pandas dataframe has a number of functions built in that you can use to analyze your data.</p>
+<p>The first we will look at is the <code class="docutils literal notranslate"><span class="pre">mean</span></code> function. If we do <code class="docutils literal notranslate"><span class="pre">dataframe.mean()</span></code>, we will get the average value of each column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.mean()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we can get the standard deviation of each column by using the <code class="docutils literal notranslate"><span class="pre">std</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.std()
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can quickly get all descriptive statistics of all of the columns by using <code class="docutils literal notranslate"><span class="pre">.describe</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.describe()
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of these functions is a pandas dataframe, so we can save our results in a variable and access it the same we we did with our other dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>statistics = distances.describe()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>statistics
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Get the THR4_ATP column
+statistics[&quot;THR4_ATP&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="writing-files-using-pandas">
+<h2>Writing Files using Pandas<a class="headerlink" href="#writing-files-using-pandas" title="Permalink to this headline">#</a></h2>
+<p>Pandas has built-in functions to write our data to files.
+We can save our results to a new CSV file using the function <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># save a file called &quot;analysis.csv&quot;
+statistics.to_csv(&quot;analysis.csv&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mathematical-operations-and-filtering">
+<h2>Mathematical Operations and Filtering<a class="headerlink" href="#mathematical-operations-and-filtering" title="Permalink to this headline">#</a></h2>
+<p>Pandas dataframes will often allow you to avoid using <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.
+For example, if we wanted to multiply a column by 10, we could do</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ASP&quot;] * 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>This would also work for adding, subtracting, or multiplying.
+We can also easily save our calculated value as a new column. The syntax for this is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;new_column_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculation</span>
+</pre></div>
+</div>
+<p>Imagine we wanted to convert our distances to nanometers, we could do</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ASP(nm)&quot;] = distances[&quot;THR4_ASP&quot;] * 0.1
+distances
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of writing an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, we can do</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ATP&quot;] &gt; 9
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then use that as an index to get the rows where the condition is True</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[distances[&quot;THR4_ATP&quot;] &gt; 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pandas-and-numpy">
+<h2>Pandas and NumPy<a class="headerlink" href="#pandas-and-numpy" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="dataframe-and-array-axes">
+<h2>Dataframe and Array Axes<a class="headerlink" href="#dataframe-and-array-axes" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="your-turn">
+<h2>Your Turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">#</a></h2>
+<p>Read in file <code class="docutils literal notranslate"><span class="pre">PubChemElements_all.csv</span></code>.</p>
+<ol class="simple">
+<li><p>Calculate melting points in Kelvin and save in a new column.</p></li>
+<li><p>Calculate column statistics and save them in a new dataframe.</p></li>
+<li><p>Find elements where the boiling point is greater than the average boiling point.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -393,6 +814,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="day2-overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Day 2 - Data Analysis and Plotting</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
