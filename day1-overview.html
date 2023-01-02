@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview &#8212; MolSSI and Cal State LA Workshop</title>
+    <title>Day 1 - Introduction to Python &#8212; MolSSI and Cal State LA Workshop</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Set Up" href="setup.html" />
+    <link rel="next" title="Introduction to Python" href="01-python-introduction.html" />
+    <link rel="prev" title="Set Up" href="setup.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,23 +117,23 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Overview
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="setup.html">
    Set Up
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day1-overview.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Day 1 - Introduction to Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -206,6 +207,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MolSSI-Education/WORKSHOP_NAME/main?urlpath=tree/book/day1-overview.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -245,7 +275,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2Fday1-overview.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -273,7 +303,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/day1-overview.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -284,7 +314,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -322,7 +352,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview</h1>
+                <h1>Day 1 - Introduction to Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -334,9 +364,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
-<p>MolSSI - Cal State LA PREC</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-1-introduction-to-python">
+<h1>Day 1 - Introduction to Python<a class="headerlink" href="#day-1-introduction-to-python" title="Permalink to this headline">#</a></h1>
+<div class="day-overview admonition">
+<p class="admonition-title">Day 1 Overview</p>
+<p>In this session, we’ll learn about the Python programming language.
+We’ll see how we can use an interface in our web browser called the <strong>Jupyter Notebook</strong> to write and run Python code.
+We’ll also see how we can use Python to look for information in many text files at once.</p>
+<p>At the end of this session, you should be able to answer the following questions:</p>
+<div class="overview admonition">
+<p class="admonition-title">Introduction to Python</p>
+<ul class="simple">
+<li><p>What is the Python programming language, and what is it used for?</p></li>
+<li><p>What is the syntax of the Python programming language?</p></li>
+</ul>
+</div>
+<div class="overview admonition">
+<p class="admonition-title">File Parsing</p>
+<ul class="simple">
+<li><p>How can I use Python to read text files?</p></li>
+<li><p>How do I sort through all the information in a text file and extract particular pieces of information?</p></li>
+</ul>
+</div>
+<div class="overview admonition">
+<p class="admonition-title">Processing Multiple Files</p>
+<ul class="simple">
+<li><p>How can I use Python to analyze several text files at once?</p></li>
+<li><p>How can I write files?</p></li>
+</ul>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -368,10 +425,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="setup.html" title="next page">
+    <a class='left-prev' id="prev-link" href="setup.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Set Up</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01-python-introduction.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Set Up</p>
+        <p class="prev-next-title">Introduction to Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
