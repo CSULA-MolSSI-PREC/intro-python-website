@@ -382,6 +382,11 @@ title="Print to PDF"
    Searching for a pattern in your file
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your Turn
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -425,6 +430,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#searching-for-a-pattern-in-your-file">
    Searching for a pattern in your file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your Turn
   </a>
  </li>
 </ul>
@@ -493,17 +503,6 @@ To see what folder your notebook is in, type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(os.listdir(&quot;data&quot;))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;03_Prod.mdout&#39;,
- &#39;distance_data_headers.csv&#39;,
- &#39;outfiles&#39;,
- &#39;benzene.xyz&#39;,
- &#39;sapt.out&#39;,
- &#39;water.xyz&#39;,
- &#39;buckminsterfullerene.xyz&#39;]
 </pre></div>
 </div>
 </div>
@@ -585,7 +584,14 @@ The output from this function will tell us the number of lines in a file because
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-RHF Final Energy:  -154.09130176573018
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -601,21 +607,11 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;@DF-RHF&#39;, &#39;Final&#39;, &#39;Energy:&#39;, &#39;-154.09130176573018&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Or, we an use the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) as the delimiter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy_line.split(&#39;:&#39;)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;  @DF-RHF Final Energy&#39;, &#39;  -154.09130176573018\n&#39;]
 </pre></div>
 </div>
 </div>
@@ -629,22 +625,12 @@ print(words)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;@DF-RHF&#39;, &#39;Final&#39;, &#39;Energy:&#39;, &#39;-154.09130176573018&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>From this <code class="docutils literal notranslate"><span class="pre">print</span></code> statement, we now see that we have a list called <code class="docutils literal notranslate"><span class="pre">words</span></code>, where we have split <code class="docutils literal notranslate"><span class="pre">energy_line</span></code>. The energy is actually the fourth element of this list, so we can now save it as a new variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy = words[3]
 print(energy)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-154.09130176573018
 </pre></div>
 </div>
 </div>
@@ -661,16 +647,6 @@ Why do you think that is?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy + 50
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy</span> <span class="o">+</span> <span class="mi">50</span>
-
-<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
@@ -691,54 +667,33 @@ Why do you think that is?</p>
 </div>
 </div>
 </div>
+</section>
+<section id="your-turn">
+<h2>Your Turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Your Turn: Exercise on File Parsing</p>
-<p>Use the provided sapt.out file. In this output file, the program calculates the interaction energy for an ethene-ethyne complex. The output reports four interaction energy components: electrostatics, induction, exchange, and dispersion. Parse each of these energies, in kcal/mole, from the output file. (Hint: study the file in a text editor to help you decide what to search for.) Calculate the total interaction energy by adding the four components together. Your code’s output should look something like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Electrostatics</span> <span class="p">:</span> <span class="o">-</span><span class="mf">2.25850118</span> <span class="n">kcal</span><span class="o">/</span><span class="n">mol</span>
-<span class="n">Exchange</span> <span class="p">:</span> <span class="mf">2.27730198</span> <span class="n">kcal</span><span class="o">/</span><span class="n">mol</span>
-<span class="n">Induction</span> <span class="p">:</span> <span class="o">-</span><span class="mf">0.5216933</span> <span class="n">kcal</span><span class="o">/</span><span class="n">mol</span>
-<span class="n">Dispersion</span> <span class="p">:</span> <span class="o">-</span><span class="mf">0.9446677</span> <span class="n">kcal</span><span class="o">/</span><span class="n">mol</span>
-<span class="n">Total</span> <span class="n">Energy</span> <span class="p">:</span> <span class="mf">1.4475602000000003</span> <span class="n">kcal</span><span class="o">/</span><span class="n">mol</span>
-</pre></div>
-</div>
+<p class="admonition-title">Exercise on File Parsing</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">03_Prod.mdout</span></code> is an output file from an Amber molecular dynamics simulation.
+Read in the file, and pull out all of the total energy values (<code class="docutils literal notranslate"><span class="pre">Etot</span></code>). Save the values in a list (don’t forget to cast them to floating point numbers!)</p>
 <div class="exercise dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p>This is one possible solution for the SAPT parsing exercise:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">important_lines</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">energies</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;SAPT.out&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">saptout</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">saptout</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s1">&#39;Electrostatics    &#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-            <span class="n">electro_line</span> <span class="o">=</span> <span class="n">line</span>
-            <span class="n">important_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">electro_line</span><span class="p">)</span>
-        <span class="k">if</span> <span class="s1">&#39;Exchange       &#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-            <span class="n">exchange_line</span> <span class="o">=</span> <span class="n">line</span>
-            <span class="n">important_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">exchange_line</span><span class="p">)</span>
-        <span class="k">if</span> <span class="s1">&#39;Induction      &#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-            <span class="n">induction_line</span> <span class="o">=</span> <span class="n">line</span>
-            <span class="n">important_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">induction_line</span><span class="p">)</span>
-        <span class="k">if</span> <span class="s1">&#39;Dispersion     &#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-            <span class="n">dispersion_line</span> <span class="o">=</span> <span class="n">line</span>
-            <span class="n">important_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dispersion_line</span><span class="p">)</span>
-
-<span class="c1"># print(important_lines)</span>
-
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">important_lines</span><span class="p">:</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="c1"># print(words)</span>
-    <span class="n">energy_type</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">energy_kcal</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-    <span class="n">energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">energy_kcal</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> : </span><span class="si">{}</span><span class="s1"> kcal/mol&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">energy_type</span><span class="p">,</span> <span class="n">energy_kcal</span><span class="p">))</span>
-
-<span class="n">total_energy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total Energy : </span><span class="si">{}</span><span class="s1"> kcal/mol&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_energy</span><span class="p">))</span>
-
-
+<ul class="simple">
+<li><p>Solution goes here.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="key admonition">
+<p class="admonition-title">Key Points</p>
+<ul class="simple">
+<li><p>Python has libraries which can be imported. Libraries let us access more functions.</p></li>
+<li><p>You can import a library using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">library_name</span></code>.</p></li>
+<li><p>You use functions from imported libraries by doing <code class="docutils literal notranslate"><span class="pre">library_name.function_name</span></code>.</p></li>
+<li><p>To open a file, use <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(filename)</span></code>.</p></li>
+<li><p>Get contents of a text file in a variable using <code class="docutils literal notranslate"><span class="pre">readlines</span></code>.</p></li>
+<li><p>You can search through the lines in your file by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to go through each line and an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to look for a pattern.</p></li>
+</ul>
 </div>
 </section>
 </section>
