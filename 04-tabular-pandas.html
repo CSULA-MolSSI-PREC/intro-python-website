@@ -416,11 +416,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataframe-and-array-axes">
-   Dataframe and Array Axes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#your-turn">
    Your Turn
   </a>
@@ -479,11 +474,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas-and-numpy">
    Pandas and NumPy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataframe-and-array-axes">
-   Dataframe and Array Axes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -579,6 +569,125 @@ If you use the <code class="docutils literal notranslate"><span class="pre">prin
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>8.9542</td>
+      <td>5.8024</td>
+      <td>11.5478</td>
+      <td>9.9557</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>8.6181</td>
+      <td>6.0942</td>
+      <td>13.9594</td>
+      <td>11.6945</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>9.0066</td>
+      <td>6.0637</td>
+      <td>13.0924</td>
+      <td>11.3043</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>9.2002</td>
+      <td>6.0227</td>
+      <td>14.5282</td>
+      <td>10.1763</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>9.1294</td>
+      <td>5.9365</td>
+      <td>13.5321</td>
+      <td>10.6279</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>9996</td>
+      <td>8.5083</td>
+      <td>7.7587</td>
+      <td>9.1789</td>
+      <td>10.6715</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>9997</td>
+      <td>8.9524</td>
+      <td>7.4681</td>
+      <td>9.5132</td>
+      <td>10.9945</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>9998</td>
+      <td>8.6625</td>
+      <td>7.7306</td>
+      <td>9.5469</td>
+      <td>10.3063</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>9999</td>
+      <td>9.2456</td>
+      <td>7.8886</td>
+      <td>9.8151</td>
+      <td>10.7564</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>10000</td>
+      <td>8.8135</td>
+      <td>7.9170</td>
+      <td>9.9517</td>
+      <td>10.7848</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 5 columns</p>
+</div></div></div>
 </div>
 <p>This output gives us some information about what is in the dataframe.
 You can see that pandas made the first row in the file into headers.
@@ -599,6 +708,22 @@ The synatx for this is</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       8.9542
+1       8.6181
+2       9.0066
+3       9.2002
+4       9.1294
+         ...  
+9995    8.5083
+9996    8.9524
+9997    8.6625
+9998    9.2456
+9999    8.8135
+Name: THR4_ATP, Length: 10000, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you want multiple columns, you use a list of column names in square brackets.</p>
 <div class="cell docutils container">
@@ -607,6 +732,89 @@ The synatx for this is</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>THR4_ATP</th>
+      <th>TYR6_ATP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8.9542</td>
+      <td>11.5478</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8.6181</td>
+      <td>13.9594</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9.0066</td>
+      <td>13.0924</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.2002</td>
+      <td>14.5282</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9.1294</td>
+      <td>13.5321</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>8.5083</td>
+      <td>9.1789</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>8.9524</td>
+      <td>9.5132</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>8.6625</td>
+      <td>9.5469</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>9.2456</td>
+      <td>9.8151</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>8.8135</td>
+      <td>9.9517</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 2 columns</p>
+</div></div></div>
 </div>
 <p>If we want to get information in the dataframe using row and column numbers, we use the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> function.</p>
 <p>The syntax for <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is</p>
@@ -621,11 +829,26 @@ distances.iloc[0]
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frame        1.0000
+THR4_ATP     8.9542
+THR4_ASP     5.8024
+TYR6_ATP    11.5478
+TYR6_ASP     9.9557
+Name: 0, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This will get the first row and the second column.
 distances.iloc[0, 1]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.9542
 </pre></div>
 </div>
 </div>
@@ -661,6 +884,83 @@ To take a slice, you use a colon:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>8.9542</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>8.6181</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>9.0066</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>9.2002</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>9.1294</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>9.0462</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>8.8657</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>9.3256</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>9.4184</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>9.0600</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -674,11 +974,31 @@ To take a slice, you use a colon:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frame       5000.500000
+THR4_ATP      10.876951
+THR4_ASP       7.342345
+TYR6_ATP      11.209791
+TYR6_ASP      10.993443
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Similarly, we can get the standard deviation of each column by using the <code class="docutils literal notranslate"><span class="pre">std</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.std()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frame       2886.895680
+THR4_ATP       2.676669
+THR4_ASP       0.995629
+TYR6_ATP       2.367468
+TYR6_ASP       1.058657
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -690,6 +1010,100 @@ To take a slice, you use a colon:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>10000.00000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5000.50000</td>
+      <td>10.876951</td>
+      <td>7.342345</td>
+      <td>11.209791</td>
+      <td>10.993443</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2886.89568</td>
+      <td>2.676669</td>
+      <td>0.995629</td>
+      <td>2.367468</td>
+      <td>1.058657</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.00000</td>
+      <td>5.741600</td>
+      <td>3.606100</td>
+      <td>5.707900</td>
+      <td>7.855700</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2500.75000</td>
+      <td>8.740850</td>
+      <td>6.739650</td>
+      <td>9.560125</td>
+      <td>10.299925</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5000.50000</td>
+      <td>10.775950</td>
+      <td>7.410700</td>
+      <td>10.894250</td>
+      <td>10.880550</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7500.25000</td>
+      <td>12.892300</td>
+      <td>7.976450</td>
+      <td>12.921500</td>
+      <td>11.574075</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10000.00000</td>
+      <td>19.480000</td>
+      <td>10.816900</td>
+      <td>18.932300</td>
+      <td>15.006500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The output of these functions is a pandas dataframe, so we can save our results in a variable and access it the same we we did with our other dataframe.</p>
 <div class="cell docutils container">
@@ -705,11 +1119,118 @@ To take a slice, you use a colon:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>10000.00000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+      <td>10000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5000.50000</td>
+      <td>10.876951</td>
+      <td>7.342345</td>
+      <td>11.209791</td>
+      <td>10.993443</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2886.89568</td>
+      <td>2.676669</td>
+      <td>0.995629</td>
+      <td>2.367468</td>
+      <td>1.058657</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.00000</td>
+      <td>5.741600</td>
+      <td>3.606100</td>
+      <td>5.707900</td>
+      <td>7.855700</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2500.75000</td>
+      <td>8.740850</td>
+      <td>6.739650</td>
+      <td>9.560125</td>
+      <td>10.299925</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5000.50000</td>
+      <td>10.775950</td>
+      <td>7.410700</td>
+      <td>10.894250</td>
+      <td>10.880550</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7500.25000</td>
+      <td>12.892300</td>
+      <td>7.976450</td>
+      <td>12.921500</td>
+      <td>11.574075</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10000.00000</td>
+      <td>19.480000</td>
+      <td>10.816900</td>
+      <td>18.932300</td>
+      <td>15.006500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Get the THR4_ATP column
 statistics[&quot;THR4_ATP&quot;]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    10000.000000
+mean        10.876951
+std          2.676669
+min          5.741600
+25%          8.740850
+50%         10.775950
+75%         12.892300
+max         19.480000
+Name: THR4_ATP, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -738,6 +1259,22 @@ For example, if we wanted to multiply a column by 10, we could do</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       58.024
+1       60.942
+2       60.637
+3       60.227
+4       59.365
+         ...  
+9995    77.587
+9996    74.681
+9997    77.306
+9998    78.886
+9999    79.170
+Name: THR4_ASP, Length: 10000, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>This would also work for adding, subtracting, or multiplying.
 We can also easily save our calculated value as a new column. The syntax for this is</p>
@@ -752,11 +1289,158 @@ distances
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+      <th>THR4_ASP(nm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>8.9542</td>
+      <td>5.8024</td>
+      <td>11.5478</td>
+      <td>9.9557</td>
+      <td>0.58024</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>8.6181</td>
+      <td>6.0942</td>
+      <td>13.9594</td>
+      <td>11.6945</td>
+      <td>0.60942</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>9.0066</td>
+      <td>6.0637</td>
+      <td>13.0924</td>
+      <td>11.3043</td>
+      <td>0.60637</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>9.2002</td>
+      <td>6.0227</td>
+      <td>14.5282</td>
+      <td>10.1763</td>
+      <td>0.60227</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>9.1294</td>
+      <td>5.9365</td>
+      <td>13.5321</td>
+      <td>10.6279</td>
+      <td>0.59365</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>9996</td>
+      <td>8.5083</td>
+      <td>7.7587</td>
+      <td>9.1789</td>
+      <td>10.6715</td>
+      <td>0.77587</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>9997</td>
+      <td>8.9524</td>
+      <td>7.4681</td>
+      <td>9.5132</td>
+      <td>10.9945</td>
+      <td>0.74681</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>9998</td>
+      <td>8.6625</td>
+      <td>7.7306</td>
+      <td>9.5469</td>
+      <td>10.3063</td>
+      <td>0.77306</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>9999</td>
+      <td>9.2456</td>
+      <td>7.8886</td>
+      <td>9.8151</td>
+      <td>10.7564</td>
+      <td>0.78886</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>10000</td>
+      <td>8.8135</td>
+      <td>7.9170</td>
+      <td>9.9517</td>
+      <td>10.7848</td>
+      <td>0.79170</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 6 columns</p>
+</div></div></div>
 </div>
 <p>Instead of writing an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, we can do</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ATP&quot;] &gt; 9
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       False
+1       False
+2        True
+3        True
+4        True
+        ...  
+9995    False
+9996    False
+9997    False
+9998     True
+9999    False
+Name: THR4_ATP, Length: 10000, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -768,22 +1452,229 @@ distances
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+      <th>THR4_ASP(nm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>9.0066</td>
+      <td>6.0637</td>
+      <td>13.0924</td>
+      <td>11.3043</td>
+      <td>0.60637</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>9.2002</td>
+      <td>6.0227</td>
+      <td>14.5282</td>
+      <td>10.1763</td>
+      <td>0.60227</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>9.1294</td>
+      <td>5.9365</td>
+      <td>13.5321</td>
+      <td>10.6279</td>
+      <td>0.59365</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>9.0462</td>
+      <td>6.2553</td>
+      <td>13.9060</td>
+      <td>10.4292</td>
+      <td>0.62553</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>9.3256</td>
+      <td>6.2351</td>
+      <td>13.0721</td>
+      <td>10.4740</td>
+      <td>0.62351</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9990</th>
+      <td>9991</td>
+      <td>9.1535</td>
+      <td>8.3352</td>
+      <td>10.9256</td>
+      <td>11.3146</td>
+      <td>0.83352</td>
+    </tr>
+    <tr>
+      <th>9991</th>
+      <td>9992</td>
+      <td>9.4492</td>
+      <td>8.1078</td>
+      <td>11.0096</td>
+      <td>11.5627</td>
+      <td>0.81078</td>
+    </tr>
+    <tr>
+      <th>9992</th>
+      <td>9993</td>
+      <td>9.7893</td>
+      <td>7.5384</td>
+      <td>10.1918</td>
+      <td>11.0180</td>
+      <td>0.75384</td>
+    </tr>
+    <tr>
+      <th>9993</th>
+      <td>9994</td>
+      <td>9.4321</td>
+      <td>8.0167</td>
+      <td>9.5764</td>
+      <td>10.9514</td>
+      <td>0.80167</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>9999</td>
+      <td>9.2456</td>
+      <td>7.8886</td>
+      <td>9.8151</td>
+      <td>10.7564</td>
+      <td>0.78886</td>
+    </tr>
+  </tbody>
+</table>
+<p>7143 rows × 6 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="pandas-and-numpy">
 <h2>Pandas and NumPy<a class="headerlink" href="#pandas-and-numpy" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="dataframe-and-array-axes">
-<h2>Dataframe and Array Axes<a class="headerlink" href="#dataframe-and-array-axes" title="Permalink to this headline">#</a></h2>
+<p>Another commonly used library in data science and scientifid programming is called <a class="reference external" href="https://numpy.org/">NumPy</a>.</p>
+<p>Pandas dataframes are built on top of a data structure known as the NumPy Array..</p>
+<p>In general, you should use pandas dataframe when working with data which is:</p>
+<ul class="simple">
+<li><p>Two dimensional (rows and columns).</p></li>
+<li><p>Labeled.</p></li>
+<li><p>Mixed type.</p></li>
+<li><p>Something for which you would like to be able to easily get statistics.</p></li>
+</ul>
+<p>You should work with NumPy arrays when:</p>
+<ul class="simple">
+<li><p>You have higher dimensional data (collection of two dimensional arrays).</p></li>
+<li><p>You need to perform advanced mathematics like linear algebra.</p></li>
+<li><p>You are using a library which requires NumPy arrays (scikitlearn).</p></li>
+</ul>
+<p>To convert a dataframe to a numpy array, use the function <code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances_array = distances.to_numpy()
+print(distances_array)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00000e+00 8.95420e+00 5.80240e+00 1.15478e+01 9.95570e+00 5.80240e-01]
+ [2.00000e+00 8.61810e+00 6.09420e+00 1.39594e+01 1.16945e+01 6.09420e-01]
+ [3.00000e+00 9.00660e+00 6.06370e+00 1.30924e+01 1.13043e+01 6.06370e-01]
+ ...
+ [9.99800e+03 8.66250e+00 7.73060e+00 9.54690e+00 1.03063e+01 7.73060e-01]
+ [9.99900e+03 9.24560e+00 7.88860e+00 9.81510e+00 1.07564e+01 7.88860e-01]
+ [1.00000e+04 8.81350e+00 7.91700e+00 9.95170e+00 1.07848e+01 7.91700e-01]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>After you use the <code class="docutils literal notranslate"><span class="pre">to_numpy()</span></code> function, you will gt a NumPy array.
+A NumPy array does not have columnn names.
+You can slice a NumPy array by using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and the same slicing you used with
+pandas dataframes and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances_array[0:10, 1:3]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8.9542, 5.8024],
+       [8.6181, 6.0942],
+       [9.0066, 6.0637],
+       [9.2002, 6.0227],
+       [9.1294, 5.9365],
+       [9.0462, 6.2553],
+       [8.8657, 5.9186],
+       [9.3256, 6.2351],
+       [9.4184, 6.1993],
+       [9.06  , 6.0478]])
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="your-turn">
 <h2>Your Turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">Pandas Exercise</p>
 <p>Read in file <code class="docutils literal notranslate"><span class="pre">PubChemElements_all.csv</span></code>.</p>
 <ol class="simple">
-<li><p>Calculate melting points in Kelvin and save in a new column.</p></li>
+<li><p>Calculate melting points in celsius and save in a new column. The columns with melting and boiling points use Kelvin.</p></li>
 <li><p>Calculate column statistics and save them in a new dataframe.</p></li>
 <li><p>Find elements where the boiling point is greater than the average boiling point.</p></li>
 </ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>This shows one potential solution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">periodic_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/PubChemElements_all.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1 - Calculate melting points in celsius and save in a new column.</span>
+<span class="n">periodic_data</span><span class="p">[</span><span class="s2">&quot;MeltingPointC&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">periodic_data</span><span class="p">[</span><span class="s2">&quot;MeltingPoint&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.15</span>
+
+<span class="c1"># 2 - Calculate the column statistics and sav them in a new dataframe.</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">periodic_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="c1"># 3. Find elements where the boiling point is greater than the average.</span>
+<span class="n">periodic_data</span><span class="p">[</span> <span class="n">periodic_data</span><span class="p">[</span><span class="s2">&quot;BoilingPoint&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">periodic_data</span><span class="p">[</span><span class="s2">&quot;BoilingPoint&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
