@@ -8,4 +8,5 @@ chapters:
   - file: 02-file-parsing
   - file: 03-multiple-file
 - file: day2-overeview
+  sections:
   - file: 04-tabular-pandas
