@@ -452,7 +452,7 @@ In such a case the cutting and pasting method would be very tedious and time con
 <p>In this lesson, we will be using the <code class="docutils literal notranslate"><span class="pre">glob</span></code> library, which will help us read in multiple files from our computer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import glob
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
 </pre></div>
 </div>
 </div>
@@ -462,8 +462,8 @@ For this file path, we will use <code class="docutils literal notranslate"><span
 When we use this with the <code class="docutils literal notranslate"><span class="pre">glob</span></code> function in the <code class="docutils literal notranslate"><span class="pre">glob</span></code> library, we will get all of the files that matches that pattern</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>file_location = &quot;data/outfiles/*.out&quot;
-print(file_location)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_location</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/*.out&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_location</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -472,9 +472,9 @@ print(file_location)
 <p>Next we are going to use a function called glob in the library called glob. It is a little confusing since the function and the library have the same name, but we will see other examples where this is not the case later. The output of the function glob is a list of all the filenames that fit the pattern specified in the input. The input is the file location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>filenames = glob.glob(file_location)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_location</span><span class="p">)</span>
 
-print(filenames)
+<span class="nb">print</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -482,16 +482,16 @@ print(filenames)
 <p>This will give us a list of all the files which end in <code class="docutils literal notranslate"><span class="pre">*.out</span></code> in the outfiles directory. Now if we want to parse every file we just read in, we will use a for loop to go through each file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for f in filenames:
-    outfile = open(f,&#39;r&#39;)
-    data = outfile.readlines()
-    outfile.close()
-    for line in data:
-        if &#39;Final Energy&#39; in line:
-            energy_line = line
-            words = energy_line.split()
-            energy = float(words[3])
-            print(energy)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -501,13 +501,13 @@ print(filenames)
 <p>We want to print the name of the molecule with the energy. We can use <code class="docutils literal notranslate"><span class="pre">os.path.basename</span></code>, which is another function in <code class="docutils literal notranslate"><span class="pre">os</span></code> to get just the name of the file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-first_file = filenames[0]
-print(first_file)
+<span class="n">first_file</span> <span class="o">=</span> <span class="n">filenames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_file</span><span class="p">)</span>
 
-file_name = os.path.basename(first_file)
-print(file_name)
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">first_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -528,23 +528,23 @@ print(file_name)
 <p>Using the solution from the previous exercise, we can modify our loop so that it prints the file name along with each energy value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for f in filenames:
-    # Get the molecule name
-    file_name = os.path.basename(f)
-    split_filename = file_name.split(&#39;.&#39;)
-    molecule_name = split_filename[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="c1"># Get the molecule name</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">split_filename</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">molecule_name</span> <span class="o">=</span> <span class="n">split_filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    # Read the data
-    with open(f) as outfile:
-        data = outfile.readlines()
+    <span class="c1"># Read the data</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
-    # Loop through the data
-    for line in data:
-        if &#39;Final Energy&#39; in line:
-            energy_line = line
-            words = energy_line.split()
-            energy = float(words[3])
-            print(molecule_name, energy)
+    <span class="c1"># Loop through the data</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">molecule_name</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -557,24 +557,24 @@ print(file_name)
 <p>To make the printing neater, we will separate the file name from the energy using a tab. To insert a tab, we use the special character \t.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>with open(&#39;energies.txt&#39;,&#39;w+&#39;) as datafile:
-    for f in filenames:
-        # Get the molecule name
-        file_name = os.path.basename(f)
-        split_filename = file_name.split(&#39;.&#39;)
-        molecule_name = split_filename[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;energies.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="c1"># Get the molecule name</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">split_filename</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">molecule_name</span> <span class="o">=</span> <span class="n">split_filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-        # Read the data
-        with open(f) as outfile:
-            data = outfile.readlines()
+        <span class="c1"># Read the data</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
-        # Loop through the data
-        for line in data:
-            if &#39;Final Energy&#39; in line:
-                energy_line = line
-                words = energy_line.split()
-                energy = float(words[3])
-                datafile.write(F&#39;{molecule_name} \t {energy} \n&#39;)
+        <span class="c1"># Loop through the data</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+                <span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">datafile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">molecule_name</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

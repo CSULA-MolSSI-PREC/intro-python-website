@@ -599,7 +599,7 @@ This is not very useful.
 Type the following into the next cell of your Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>3 + 7
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">7</span>
 </pre></div>
 </div>
 </div>
@@ -612,10 +612,10 @@ The syntax for assigning variables is the following:</p>
 <p>Let’s see this in action with a calculation. Type the following into the next cell of your Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>deltaH = -541.5   #kJ/mole
-deltaS =  10.4     #kJ/(mole K)
-temp = 298      #Kelvin
-deltaG = deltaH - temp * deltaS
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deltaH</span> <span class="o">=</span> <span class="o">-</span><span class="mf">541.5</span>   <span class="c1">#kJ/mole</span>
+<span class="n">deltaS</span> <span class="o">=</span>  <span class="mf">10.4</span>     <span class="c1">#kJ/(mole K)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="mi">298</span>      <span class="c1">#Kelvin</span>
+<span class="n">deltaG</span> <span class="o">=</span> <span class="n">deltaH</span> <span class="o">-</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">deltaS</span>
 </pre></div>
 </div>
 </div>
@@ -629,7 +629,7 @@ Comments are also often used to explain what the code is doing or leave informat
 <p>We can now access any of the variables from other cells. Let’s print the value that we calculated. In the next cell,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -648,9 +648,9 @@ Functions have a name that is followed by parenthesis containing the function in
 <p>Note that if you do not specify a new name for a variable, then it doesn’t automatically change the value of the variable. For example if we typed</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
-deltaG * 1000
-print(deltaG)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+<span class="n">deltaG</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -658,9 +658,9 @@ print(deltaG)
 <p>Nothing happened to the value of deltaG. If we wanted to change the value of deltaG we would have to re-save the variable using the same name to overwrite the existing value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
-deltaG = deltaG * 1000
-print(deltaG)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+<span class="n">deltaG</span> <span class="o">=</span> <span class="n">deltaG</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -668,10 +668,10 @@ print(deltaG)
 <p>There are situations where it is reasonable to overwrite a variable with a new value, but you should always think carefully about this. Usually it is a better practice to give the variable a new name and leave the existing variable as is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(deltaG)
-deltaG_joules = deltaG * 1000
-print(deltaG)
-print(deltaG_joules)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+<span class="n">deltaG_joules</span> <span class="o">=</span> <span class="n">deltaG</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deltaG_joules</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -681,10 +681,10 @@ print(deltaG_joules)
 <p>Python can do what is called multiple assignment where you assign several variables their values on one line of code. The following code block does the exact same thing as the previous code block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#I can assign all these variables at once
-deltaH, deltaS, temp = -541.5, 10.4, 298
-deltaG = deltaH - temp * deltaS
-print(deltaG)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I can assign all these variables at once</span>
+<span class="n">deltaH</span><span class="p">,</span> <span class="n">deltaS</span><span class="p">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">541.5</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">,</span> <span class="mi">298</span>
+<span class="n">deltaG</span> <span class="o">=</span> <span class="n">deltaH</span> <span class="o">-</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">deltaS</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -699,7 +699,7 @@ integers (int), and floating point numbers (float).
 You can identify the data type of any variable with the function <code class="docutils literal notranslate"><span class="pre">type(variable_name)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(deltaG)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -707,8 +707,8 @@ You can identify the data type of any variable with the function <code class="do
 <p>You can change the data type of a variable like this. This is called casting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>deltaG_string = str(deltaG)
-type(deltaG_string)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deltaG_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">deltaG_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -716,8 +716,8 @@ type(deltaG_string)
 <p>We could have created a variable as a string originally by surrounding the value in quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. It doesn’t matter if you use single or double quotes, the first quote just has to match the closing quote.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>string_variable = &quot;This is a string&quot;
-print(type(string_variable))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_variable</span> <span class="o">=</span> <span class="s2">&quot;This is a string&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">string_variable</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -732,13 +732,13 @@ The built-in function <code class="docutils literal notranslate"><span class="pr
 This code block also demonstrates how to print multiple variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This is a list
-energy_kcal = [-13.4, -2.7, 5.4, 42.1]
-# I can determine its length
-energy_length = len(energy_kcal)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a list</span>
+<span class="n">energy_kcal</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">13.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">,</span> <span class="mf">42.1</span><span class="p">]</span>
+<span class="c1"># I can determine its length</span>
+<span class="n">energy_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">energy_kcal</span><span class="p">)</span>
 
-# print the list length
-print(&#39;The length of this list is&#39;, energy_length)
+<span class="c1"># print the list length</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of this list is&#39;</span><span class="p">,</span> <span class="n">energy_length</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,8 +746,8 @@ print(&#39;The length of this list is&#39;, energy_length)
 <p>If I want to operate on a particular element of the list, you use the list name and then put in brackets which element of the list you want. In python counting starts at zero. So the first element of the list is list[0].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Print the first element of the list
-print(energy_kcal[0])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the first element of the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_kcal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -755,9 +755,9 @@ print(energy_kcal[0])
 <p>You can use an element of a list as a variable in a calculation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Convert the second list element to kilojoules.
-energy_kilojoules = energy_kcal[1] * 4.184
-print(energy_kilojoules)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the second list element to kilojoules.</span>
+<span class="n">energy_kilojoules</span> <span class="o">=</span> <span class="n">energy_kcal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">4.184</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_kilojoules</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -771,7 +771,7 @@ print(energy_kilojoules)
 <p>When taking a slice, it is very important to remember how counting works in python. Remember that counting starts at zero so the first element of a list is <code class="docutils literal notranslate"><span class="pre">list_name[0]</span></code>. When you specify the last element for the slice, it goes <em>up to but not including</em> that element of the list. So a slice like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>short_list = energy_kcal[0:2]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">short_list</span> <span class="o">=</span> <span class="n">energy_kcal</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -779,7 +779,7 @@ print(energy_kilojoules)
 <p>includes energy_kcal[0] and energy_kcal[1] but not energy_kcal[2].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(short_list)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">short_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -819,9 +819,9 @@ print(energy_kilojoules)
 <p>Let’s use a loop to change all of our energies in kcal to kJ.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for number in energy_kcal:
-    kJ = number * 4.184
-    print(kJ)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kcal</span><span class="p">:</span>
+    <span class="n">kJ</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mf">4.184</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -832,12 +832,11 @@ print(energy_kilojoules)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-for number in energy_kcal:
-    kJ = number * 4.184
-    energy_kJ.append(kJ)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kcal</span><span class="p">:</span>
+    <span class="n">kJ</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mf">4.184</span>
+    <span class="n">energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
 
-print(energy_kJ)
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_kJ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -845,12 +844,12 @@ print(energy_kJ)
 <p>This code doesn’t work because on the first iteration of our loop, the list energy_kJ doesn’t exist. To make it work, we have to start the list outside of the loop. The list can be blank when we start it, but we have to start it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy_kJ = []
-for number in energy_kcal:
-    kJ = number * 4.184
-    energy_kJ.append(kJ)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_kJ</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kcal</span><span class="p">:</span>
+    <span class="n">kJ</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mf">4.184</span>
+    <span class="n">energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
 
-print(energy_kJ)
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_kJ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -861,13 +860,13 @@ print(energy_kJ)
 <p>Within your code, you may need to evaluate a variable and then do something if the variable has a particular value. This type of logic is handled by an if statement. In the following example, we only append the negative numbers to a new list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_energy_kJ = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negative_energy_kJ</span> <span class="o">=</span> <span class="p">[]</span>
 
-for number in energy_kJ:
-    if number &lt; 0:
-        negative_energy_kJ.append(number)
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kJ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">negative_energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 
-print(negative_energy_kJ)
+<span class="nb">print</span><span class="p">(</span><span class="n">negative_energy_kJ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -884,12 +883,12 @@ print(negative_energy_kJ)
 <p>You can also use and, or, and not to check more than one condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_numbers = []
-for number in energy_kJ:
-    if number &lt; 0 or number == 0:
-        negative_numbers.append(number)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negative_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kJ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">negative_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 
-print(negative_numbers)
+<span class="nb">print</span><span class="p">(</span><span class="n">negative_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -897,16 +896,16 @@ print(negative_numbers)
 <p>To define what happens if the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is not met, you can use the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>negative_numbers = []
-positive_numbers = []
-for number in energy_kJ:
-    if number &lt; 0 or number == 0:
-        negative_numbers.append(number)
-    else:
-        positive_numbers.append(number)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negative_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">positive_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kJ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">negative_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">positive_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 
-print(&quot;Negative numbers:&quot;, negative_numbers)
-print(&quot;Positive Numbers: &quot;, positive_numbers)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Negative numbers:&quot;</span><span class="p">,</span> <span class="n">negative_numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positive Numbers: &quot;</span><span class="p">,</span> <span class="n">positive_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

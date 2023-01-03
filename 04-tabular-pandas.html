@@ -528,7 +528,7 @@ Open the file in a text editor and study it to determine its structure.</p>
 <p>This library is called <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. When it is imported, it is usually shortened to <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -551,9 +551,9 @@ You will be able to find the same help message you get for <code class="docutils
 <p>To get started, we will make a variable for our file path, then use that variable in the <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distance_file = &quot;data/distance_data_headers.csv&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance_file</span> <span class="o">=</span> <span class="s2">&quot;data/distance_data_headers.csv&quot;</span>
 
-distances = pd.read_csv(distance_file)
+<span class="n">distances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">distance_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -565,7 +565,7 @@ This is because pandas dataframes are rendered in a special way in the Jupyter n
 If you use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function with them, they will not look as nice.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span>
 </pre></div>
 </div>
 </div>
@@ -585,7 +585,7 @@ The synatx for this is</p>
 <p>For example, to get the column “THR4_ATP”, we put the name in square brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ATP&quot;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -593,7 +593,7 @@ The synatx for this is</p>
 <p>If you want multiple columns, you use a list of column names in square brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[[&quot;THR4_ATP&quot;, &quot;TYR6_ATP&quot;]]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">,</span> <span class="s2">&quot;TYR6_ATP&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -606,16 +606,16 @@ The synatx for this is</p>
 <p>If you specify only a row number, you will get all the columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This will get the first row, all of the columns.
-distances.iloc[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will get the first row, all of the columns.</span>
+<span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># This will get the first row and the second column.
-distances.iloc[0, 1]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will get the first row and the second column.</span>
+<span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -647,7 +647,7 @@ To take a slice, you use a colon:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.iloc[0:10, :2]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +660,7 @@ To take a slice, you use a colon:</p>
 <p>The first we will look at is the <code class="docutils literal notranslate"><span class="pre">mean</span></code> function. If we do <code class="docutils literal notranslate"><span class="pre">dataframe.mean()</span></code>, we will get the average value of each column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.mean()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -668,7 +668,7 @@ To take a slice, you use a colon:</p>
 <p>Similarly, we can get the standard deviation of each column by using the <code class="docutils literal notranslate"><span class="pre">std</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.std()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -676,7 +676,7 @@ To take a slice, you use a colon:</p>
 <p>You can quickly get all descriptive statistics of all of the columns by using <code class="docutils literal notranslate"><span class="pre">.describe</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances.describe()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -684,22 +684,22 @@ To take a slice, you use a colon:</p>
 <p>The output of these functions is a pandas dataframe, so we can save our results in a variable and access it the same we we did with our other dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>statistics = distances.describe()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>statistics
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Get the THR4_ATP column
-statistics[&quot;THR4_ATP&quot;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the THR4_ATP column</span>
+<span class="n">statistics</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -711,8 +711,8 @@ statistics[&quot;THR4_ATP&quot;]
 We can save our results to a new CSV file using the function <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># save a file called &quot;analysis.csv&quot;
-statistics.to_csv(&quot;analysis.csv&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># save a file called &quot;analysis.csv&quot;</span>
+<span class="n">statistics</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;analysis.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -724,7 +724,7 @@ statistics.to_csv(&quot;analysis.csv&quot;)
 For example, if we wanted to multiply a column by 10, we could do</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ASP&quot;] * 10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ASP&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -737,8 +737,8 @@ We can also easily save our calculated value as a new column. The syntax for thi
 <p>Imagine we wanted to convert our distances to nanometers, we could do</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ASP(nm)&quot;] = distances[&quot;THR4_ASP&quot;] * 0.1
-distances
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ASP(nm)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ASP&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="n">distances</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +746,7 @@ distances
 <p>Instead of writing an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, we can do</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[&quot;THR4_ATP&quot;] &gt; 9
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">9</span>
 </pre></div>
 </div>
 </div>
@@ -754,7 +754,7 @@ distances
 <p>We can then use that as an index to get the rows where the condition is True</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances[distances[&quot;THR4_ATP&quot;] &gt; 9]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">[</span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -780,8 +780,8 @@ distances
 <p>To convert a dataframe to a numpy array, use the function <code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances_array = distances.to_numpy()
-print(distances_array)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances_array</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distances_array</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -792,7 +792,7 @@ You can slice a NumPy array by using square brackets <code class="docutils liter
 pandas dataframes and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distances_array[0:10, 1:3]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

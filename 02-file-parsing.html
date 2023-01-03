@@ -508,7 +508,7 @@ The syntax for this is</p>
 <p>We can import the <code class="docutils literal notranslate"><span class="pre">os</span></code> library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 </div>
 </div>
@@ -525,7 +525,7 @@ To see what folder your notebook is in, type:</p>
 <p>Once you do this, you should see a folder called <code class="docutils literal notranslate"><span class="pre">data</span></code>. We can see what is in the data folder by using the <code class="docutils literal notranslate"><span class="pre">os.listdir</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(os.listdir(&quot;data&quot;))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -537,7 +537,7 @@ This string will have folder names and file names separated by forward slashes (
 When deciding your file path, you can think about what you would tell someone to click in order to find the file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ethanol_file = &quot;data/outfiles/ethanol.out&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ethanol_file</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/ethanol.out&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -563,8 +563,8 @@ This will create a file object, or filehandle. The file we will be analyzing in 
 Each element in the list is a line in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>with open(ethanol_file, &quot;r&quot;) as outfile:
-    data = outfile.readlines()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ethanol_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -599,10 +599,10 @@ The output from this function will tell us the number of lines in a file because
 <p>Returning to our file example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for line in data:
-    if &#39;Final Energy&#39; in line:
-        energy_line = line
-        print(energy_line)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">energy_line</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -626,7 +626,7 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 <p>The delimiter is specified as an argument to the function (put in the parenthesis ()). If you do not specify a delimiter, a space is used by default. Let’s try this out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy_line.split()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 <p>Or, we an use the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) as the delimiter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy_line.split(&#39;:&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -643,8 +643,8 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 <p>We can save the output of this function to a variable as a new list. In the example below, we take the line we found in the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and split it up into its individual words.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>words = energy_line.split()
-print(words)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -652,8 +652,8 @@ print(words)
 <p>From this <code class="docutils literal notranslate"><span class="pre">print</span></code> statement, we now see that we have a list called <code class="docutils literal notranslate"><span class="pre">words</span></code>, where we have split <code class="docutils literal notranslate"><span class="pre">energy_line</span></code>. The energy is actually the fourth element of this list, so we can now save it as a new variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy = words[3]
-print(energy)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -669,7 +669,7 @@ print(energy)
 Why do you think that is?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy + 50
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">+</span> <span class="mi">50</span>
 </pre></div>
 </div>
 </div>
@@ -677,7 +677,7 @@ Why do you think that is?</p>
 <p>Even though energy looks like a number to us, it is really a string, so we can not add an integer to it. We need to change the data type of energy to a float. This is called casting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy = float(energy)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +685,7 @@ Why do you think that is?</p>
 <p>Now our math operation will work. If we thought ahead, we could have changed the data type when we assigned the variable originally.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>energy = float(words[3])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
