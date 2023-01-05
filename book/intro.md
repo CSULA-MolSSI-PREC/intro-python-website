@@ -38,8 +38,6 @@ At the end of this session, you should be able to answer the following questions
 ```
 ``````
 
-# Day 2 - Data Analysis and Plotting
-
 ``````{admonition} Day 2 Overview
 :class: day-overview
 
