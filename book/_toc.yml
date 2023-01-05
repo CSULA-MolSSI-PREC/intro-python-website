@@ -10,3 +10,4 @@ chapters:
 - file: day2-overview
   sections:
   - file: 04-tabular-pandas
+  - file: 05-plotting-pandas
