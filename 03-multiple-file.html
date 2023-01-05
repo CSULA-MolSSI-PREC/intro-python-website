@@ -472,6 +472,11 @@ When we use this with the <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/outfiles/*.out
+</pre></div>
+</div>
+</div>
 </div>
 <p>This specifies that we want to look for all the files in a directory called data/outfiles that end in “.out”. The * is the wildcard character which matches any character.</p>
 <p>Next we are going to use a function called glob in the library called glob. It is a little confusing since the function and the library have the same name, but we will see other examples where this is not the case later. The output of the function glob is a list of all the filenames that fit the pattern specified in the input. The input is the file location.</p>
@@ -480,6 +485,11 @@ When we use this with the <code class="docutils literal notranslate"><span class
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_location</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;data/outfiles/butanol.out&#39;, &#39;data/outfiles/methanol.out&#39;, &#39;data/outfiles/ethanol.out&#39;, &#39;data/outfiles/octanol.out&#39;, &#39;data/outfiles/heptanol.out&#39;, &#39;data/outfiles/nonanol.out&#39;, &#39;data/outfiles/propanol.out&#39;, &#39;data/outfiles/hexanol.out&#39;, &#39;data/outfiles/decanol.out&#39;, &#39;data/outfiles/pentanol.out&#39;]
 </pre></div>
 </div>
 </div>
@@ -500,6 +510,20 @@ When we use this with the <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-232.1655798347283
+-115.04800861868374
+-154.09130176573018
+-388.3110864554743
+-349.27397687072676
+-427.3465180082815
+-193.12836249728798
+-310.2385332251633
+-466.3836241400086
+-271.20138119895074
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that in this code we actually used two for loops, one nested inside the other. The outer for loop counts over the filenames we read in earlier. The inner for loop counts over the line in each file, just as we did in our previous file parsing lesson.</p>
 <p>The output our code currently generates is not that useful. It doesn’t show us which file each energy value came from.</p>
@@ -513,6 +537,12 @@ When we use this with the <code class="docutils literal notranslate"><span class
 
 <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">first_file</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/outfiles/butanol.out
+butanol.out
 </pre></div>
 </div>
 </div>
@@ -550,6 +580,20 @@ When we use this with the <code class="docutils literal notranslate"><span class
             <span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
             <span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">molecule_name</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>butanol -232.1655798347283
+methanol -115.04800861868374
+ethanol -154.09130176573018
+octanol -388.3110864554743
+heptanol -349.27397687072676
+nonanol -427.3465180082815
+propanol -193.12836249728798
+hexanol -310.2385332251633
+decanol -466.3836241400086
+pentanol -271.20138119895074
 </pre></div>
 </div>
 </div>

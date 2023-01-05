@@ -591,6 +591,125 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Frame</th>
+      <th>THR4_ATP</th>
+      <th>THR4_ASP</th>
+      <th>TYR6_ATP</th>
+      <th>TYR6_ASP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>8.9542</td>
+      <td>5.8024</td>
+      <td>11.5478</td>
+      <td>9.9557</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>8.6181</td>
+      <td>6.0942</td>
+      <td>13.9594</td>
+      <td>11.6945</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>9.0066</td>
+      <td>6.0637</td>
+      <td>13.0924</td>
+      <td>11.3043</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>9.2002</td>
+      <td>6.0227</td>
+      <td>14.5282</td>
+      <td>10.1763</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>9.1294</td>
+      <td>5.9365</td>
+      <td>13.5321</td>
+      <td>10.6279</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>9996</td>
+      <td>8.5083</td>
+      <td>7.7587</td>
+      <td>9.1789</td>
+      <td>10.6715</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>9997</td>
+      <td>8.9524</td>
+      <td>7.4681</td>
+      <td>9.5132</td>
+      <td>10.9945</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>9998</td>
+      <td>8.6625</td>
+      <td>7.7306</td>
+      <td>9.5469</td>
+      <td>10.3063</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>9999</td>
+      <td>9.2456</td>
+      <td>7.8886</td>
+      <td>9.8151</td>
+      <td>10.7564</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>10000</td>
+      <td>8.8135</td>
+      <td>7.9170</td>
+      <td>9.9517</td>
+      <td>10.7848</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 5 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="plotting-data">
@@ -609,6 +728,12 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe676957bd0&gt;]
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_4_1.png" src="_images/05-plotting-pandas_4_1.png" />
 </div>
 </div>
 <div class="exercise admonition">
@@ -633,6 +758,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f807b10&gt;]
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_7_1.png" src="_images/05-plotting-pandas_7_1.png" />
+</div>
 </div>
 <p>‘x’ and ‘y’ must also be specified if we wanted to plot the data non-sequentially, say at regular intervals.  To do this we will use a new slicing syntax. To select frames at regular intervals, we can use the syntax ‘array[start:stop:interval]’.</p>
 <section id="slicing-at-regular-intervals">
@@ -644,6 +775,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     THR4_ATP  THR4_ASP  TYR6_ATP  TYR6_ASP
+0      8.9542    5.8024   11.5478    9.9557
+100    9.0139    5.7436   13.9145   10.7853
+200   11.5060    8.9265   15.2785   12.0995
+300   13.2053    7.6506   15.8632   12.0482
+400   10.8274    7.6897   14.1698   12.2827
+500   13.0953    7.6354   15.6024   12.5670
+600   15.1074    5.9674   14.8006    9.6562
+700   14.6342    6.2847   14.4311    9.7521
+800   14.0266    7.6997   12.9560    9.7198
+900   15.0463    6.7667   13.9174    9.3867
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here is our new figure:</p>
 <div class="cell docutils container">
@@ -652,6 +798,12 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f71ec90&gt;]
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_11_1.png" src="_images/05-plotting-pandas_11_1.png" />
 </div>
 </div>
 </section>
@@ -671,6 +823,15 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frame
+THR4_ATP
+THR4_ASP
+TYR6_ATP
+TYR6_ASP
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -683,6 +844,12 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60f774ed0&gt;
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_14_1.png" src="_images/05-plotting-pandas_14_1.png" />
 </div>
 </div>
 </section>
@@ -700,6 +867,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075f4ed0&gt;
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_16_1.png" src="_images/05-plotting-pandas_16_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,6 +885,12 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe607624ed0&gt;
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_17_1.png" src="_images/05-plotting-pandas_17_1.png" />
 </div>
 </div>
 <p>Here is a list of options you can use.</p>
@@ -777,6 +956,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075b3350&gt;
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_20_1.png" src="_images/05-plotting-pandas_20_1.png" />
+</div>
 </div>
 </section>
 <section id="saving-the-figure-and-setting-the-resolution">
@@ -804,6 +989,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05-plotting-pandas_22_0.png" src="_images/05-plotting-pandas_22_0.png" />
 </div>
 </div>
 </section>
@@ -845,6 +1033,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60737b350&gt;
+</pre></div>
+</div>
+<img alt="_images/05-plotting-pandas_24_1.png" src="_images/05-plotting-pandas_24_1.png" />
+</div>
 </div>
 <p>Multiple plots can also be added by taking a slice of the data, although this precludes customization.</p>
 <div class="exercise admonition">
@@ -871,6 +1065,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05-plotting-pandas_26_0.png" src="_images/05-plotting-pandas_26_0.png" />
 </div>
 </div>
 </section>
@@ -906,6 +1103,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;subplot_all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05-plotting-pandas_28_0.png" src="_images/05-plotting-pandas_28_0.png" />
 </div>
 </div>
 </section>

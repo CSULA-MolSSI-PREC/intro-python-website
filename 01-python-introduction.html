@@ -608,6 +608,11 @@ Type the following into the next cell of your Jupyter notebook.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here, Python has performed a calculation for us. To save this value, or other values, we assign them to a variable for later use.
 The syntax for assigning variables is the following:</p>
@@ -638,6 +643,11 @@ Comments are also often used to explain what the code is doing or leave informat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="using-functions">
@@ -659,6 +669,12 @@ Functions have a name that is followed by parenthesis containing the function in
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+-3640.7000000000003
+</pre></div>
+</div>
+</div>
 </div>
 <p>Nothing happened to the value of deltaG. If we wanted to change the value of deltaG we would have to re-save the variable using the same name to overwrite the existing value.</p>
 <div class="cell docutils container">
@@ -666,6 +682,12 @@ Functions have a name that is followed by parenthesis containing the function in
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
 <span class="n">deltaG</span> <span class="o">=</span> <span class="n">deltaG</span> <span class="o">*</span> <span class="mi">1000</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
+-3640700.0000000005
 </pre></div>
 </div>
 </div>
@@ -680,6 +702,13 @@ Functions have a name that is followed by parenthesis containing the function in
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640700.0000000005
+-3640700.0000000005
+-3640700000.0000005
+</pre></div>
+</div>
+</div>
 </div>
 <section id="assigning-multipe-variables-at-once">
 <h3>Assigning multipe variables at once<a class="headerlink" href="#assigning-multipe-variables-at-once" title="Permalink to this headline">#</a></h3>
@@ -690,6 +719,11 @@ Functions have a name that is followed by parenthesis containing the function in
 <span class="n">deltaH</span><span class="p">,</span> <span class="n">deltaS</span><span class="p">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">541.5</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">,</span> <span class="mi">298</span>
 <span class="n">deltaG</span> <span class="o">=</span> <span class="n">deltaH</span> <span class="o">-</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">deltaS</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">deltaG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3640.7000000000003
 </pre></div>
 </div>
 </div>
@@ -708,6 +742,11 @@ You can identify the data type of any variable with the function <code class="do
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
 </div>
 <p>You can change the data type of a variable like this. This is called casting.</p>
 <div class="cell docutils container">
@@ -717,12 +756,22 @@ You can identify the data type of any variable with the function <code class="do
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
 </div>
 <p>We could have created a variable as a string originally by surrounding the value in quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>. It doesn’t matter if you use single or double quotes, the first quote just has to match the closing quote.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_variable</span> <span class="o">=</span> <span class="s2">&quot;This is a string&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">string_variable</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -747,12 +796,22 @@ This code block also demonstrates how to print multiple variables.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of this list is 4
+</pre></div>
+</div>
+</div>
 </div>
 <p>If I want to operate on a particular element of the list, you use the list name and then put in brackets which element of the list you want. In python counting starts at zero. So the first element of the list is list[0].</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the first element of the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_kcal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-13.4
 </pre></div>
 </div>
 </div>
@@ -763,6 +822,11 @@ This code block also demonstrates how to print multiple variables.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the second list element to kilojoules.</span>
 <span class="n">energy_kilojoules</span> <span class="o">=</span> <span class="n">energy_kcal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">4.184</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_kilojoules</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-11.296800000000001
 </pre></div>
 </div>
 </div>
@@ -785,6 +849,11 @@ This code block also demonstrates how to print multiple variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">short_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13.4, -2.7]
 </pre></div>
 </div>
 </div>
@@ -830,6 +899,14 @@ This code block also demonstrates how to print multiple variables.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-56.0656
+-11.296800000000001
+22.593600000000002
+176.1464
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now it seems like we are really getting somewhere with our program! But it would be even better if instead of just printing the values, it saved them in a new list. To do this, we are going to use the append function. The append function adds a new item to the end of an existing list. The general form of the append function is</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_thing</span><span class="p">)</span>
@@ -845,6 +922,19 @@ This code block also demonstrates how to print multiple variables.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">energy_kcal</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">kJ</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mf">4.184</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">energy_kJ</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;energy_kJ&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>This code doesn’t work because on the first iteration of our loop, the list energy_kJ doesn’t exist. To make it work, we have to start the list outside of the loop. The list can be blank when we start it, but we have to start it.</p>
 <div class="cell docutils container">
@@ -855,6 +945,11 @@ This code block also demonstrates how to print multiple variables.</p>
     <span class="n">energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kJ</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_kJ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001, 22.593600000000002, 176.1464]
 </pre></div>
 </div>
 </div>
@@ -872,6 +967,11 @@ This code block also demonstrates how to print multiple variables.</p>
         <span class="n">negative_energy_kJ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">negative_energy_kJ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001]
 </pre></div>
 </div>
 </div>
@@ -897,6 +997,11 @@ This code block also demonstrates how to print multiple variables.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-56.0656, -11.296800000000001]
+</pre></div>
+</div>
+</div>
 </div>
 <p>To define what happens if the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is not met, you can use the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword.</p>
 <div class="cell docutils container">
@@ -911,6 +1016,12 @@ This code block also demonstrates how to print multiple variables.</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Negative numbers:&quot;</span><span class="p">,</span> <span class="n">negative_numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positive Numbers: &quot;</span><span class="p">,</span> <span class="n">positive_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Negative numbers: [-56.0656, -11.296800000000001]
+Positive Numbers:  [22.593600000000002, 176.1464]
 </pre></div>
 </div>
 </div>

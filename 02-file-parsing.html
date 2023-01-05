@@ -534,6 +534,11 @@ To see what folder your notebook is in, type:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;03_Prod.mdout&#39;, &#39;distance_data_headers.csv&#39;, &#39;outfiles&#39;, &#39;benzene.xyz&#39;, &#39;sapt.out&#39;, &#39;water.xyz&#39;, &#39;buckminsterfullerene.xyz&#39;, &#39;PubChemElements_all.csv&#39;, &#39;mdout&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The file we will be working with is in the <code class="docutils literal notranslate"><span class="pre">outfiles</span></code> folder and is <code class="docutils literal notranslate"><span class="pre">ethanol.out</span></code>. We will pull a piece of information (the energy) from this file.</p>
 <p>We will open the file in the next step, but first, we have to tell Python where the file is.
@@ -612,14 +617,7 @@ The output from this function will tell us the number of lines in a file because
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
-
-<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-RHF Final Energy:  -154.09130176573018
 </pre></div>
 </div>
 </div>
@@ -635,11 +633,21 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;@DF-RHF&#39;, &#39;Final&#39;, &#39;Energy:&#39;, &#39;-154.09130176573018&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Or, we an use the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) as the delimiter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;  @DF-RHF Final Energy&#39;, &#39;  -154.09130176573018\n&#39;]
 </pre></div>
 </div>
 </div>
@@ -653,12 +661,22 @@ The <code class="docutils literal notranslate"><span class="pre">split</span></c
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;@DF-RHF&#39;, &#39;Final&#39;, &#39;Energy:&#39;, &#39;-154.09130176573018&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>From this <code class="docutils literal notranslate"><span class="pre">print</span></code> statement, we now see that we have a list called <code class="docutils literal notranslate"><span class="pre">words</span></code>, where we have split <code class="docutils literal notranslate"><span class="pre">energy_line</span></code>. The energy is actually the fourth element of this list, so we can now save it as a new variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-154.09130176573018
 </pre></div>
 </div>
 </div>
@@ -675,6 +693,16 @@ Why do you think that is?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">+</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy</span> <span class="o">+</span> <span class="mi">50</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
