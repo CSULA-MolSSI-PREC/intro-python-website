@@ -35,3 +35,28 @@ At the end of this session, you should be able to answer the following questions
 * How can I write files?
 ```
 ``````
+
+# Day 2 - Data Analysis and Plotting
+
+``````{admonition} Day 2 Overview
+:class: day-overview
+
+In this session, we'll learn using Python to analyze tabular data and create plots.
+Finally, we'll learn how to write our own functions in Python.
+
+At the end of this session, you should be able to answer the following questions:
+
+```{admonition} Analyzing Tabular Data
+:class: overview
+
+* How can I work with data that is in rows and columns?
+
+* What is a pandas dataframe?
+```
+```{admonition} Creating plots
+:class: overview
+
+* How do I visualize data by making graphs?
+```
+
+``````
