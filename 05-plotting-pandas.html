@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Plotting and Data Visualization &#8212; MolSSI and Cal State LA Workshop</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Analyzing Tabular Data" href="04-tabular-pandas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FHKVGE8HKZ"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-FHKVGE8HKZ');
+                </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/molssi_main_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MolSSI and Cal State LA Workshop</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="setup.html">
+   Set Up
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="day1-overview.html">
+   Day 1 - Introduction to Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-python-introduction.html">
+     Introduction to Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-file-parsing.html">
+     File Parsing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-multiple-file.html">
+     Processing Multiple Files and Writing Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="day2-overview.html">
+   Day 2 - Data Analysis and Plotting
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-tabular-pandas.html">
+     Analyzing Tabular Data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Plotting and Data Visualization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MolSSI-Education/WORKSHOP_NAME/main?urlpath=tree/book/05-plotting-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2F05-plotting-pandas.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/05-plotting-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-data-for-plotting">
+   Prepare data for plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-data">
+   Plotting Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-with-x-and-y">
+     Plotting with x and y
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slicing-at-regular-intervals">
+       Slicing at regular intervals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labels-and-legends">
+     Labels and Legends
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-kinds-of-charts">
+     Different kinds of charts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-color-and-image-size">
+     Changing color and image size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">
+     Saving the Figure and Setting the Resolution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">
+   Plotting More Than One Set of Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">
+     Multiple Sets On a Single Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">
+     Multiple Subplots in One Figure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-figures-using-loops">
+     Multiple Figures Using Loops
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#range-len-list">
+       range(len(list))
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Plotting and Data Visualization</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-data-for-plotting">
+   Prepare data for plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-data">
+   Plotting Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-with-x-and-y">
+     Plotting with x and y
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slicing-at-regular-intervals">
+       Slicing at regular intervals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labels-and-legends">
+     Labels and Legends
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-kinds-of-charts">
+     Different kinds of charts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-color-and-image-size">
+     Changing color and image size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">
+     Saving the Figure and Setting the Resolution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">
+   Plotting More Than One Set of Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">
+     Multiple Sets On a Single Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">
+     Multiple Subplots in One Figure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-figures-using-loops">
+     Multiple Figures Using Loops
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#range-len-list">
+       range(len(list))
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-and-data-visualization">
+<h1>Plotting and Data Visualization<a class="headerlink" href="#plotting-and-data-visualization" title="Permalink to this headline">#</a></h1>
+<div class="overview admonition">
+<p class="admonition-title">Overview</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>How do I visualize data by making graphs?</p></li>
+</ul>
+<p>Objectives:</p>
+<ul class="simple">
+<li><p>Plot data from a ‘pandas dataframe’.</p></li>
+<li><p>Label and customize graph.</p></li>
+<li><p>Save figures to files.</p></li>
+<li><p>Plot multiple graphs on one figure.</p></li>
+<li><p>Create multiple figures using a ‘for’ loop</p></li>
+</ul>
+</div>
+<p>Plotting is one of the most effective methods of representing numerical data and illustrating their patterns and trends.  There are a number of applications that facilitate graph creation (Excel, Origin, SciDavis, etc.), but these methods can be time consuming, tedious, and at times inflexible.  We have already seen the potential of coding for reading/editing/saving multiple files at once, as well as in creating tables from raw data in a ‘CSV’ file.  Taking what we have learned so far, we will focus in this module on creating plots from the data in the previous lesson, customizing the plots with color, design, labels and legends, and using loops to create multiple figures at once.</p>
+<section id="prepare-data-for-plotting">
+<h2>Prepare data for plotting<a class="headerlink" href="#prepare-data-for-plotting" title="Permalink to this headline">#</a></h2>
+<p>First, we need to import pandas and load our data into variables.  These lines should look familiar from the previous lesson.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">distance_file</span> <span class="o">=</span> <span class="s2">&quot;data/distance_data_headers.csv&quot;</span>
+
+<span class="n">distances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">distance_file</span><span class="p">)</span>
+
+<span class="n">distances</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-data">
+<h2>Plotting Data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">#</a></h2>
+<p>A data set is plotted using the ‘plot()’ function of matplotlib.pyplot.  By using the pandas DataFrame object for our tabular data, we can refer to the desired column by its header name.  If you want to see how this simplifies working with our data, check out the “Prepare for Plotting section” at the top of the <a class="reference external" href="https://education.molssi.org/python_scripting_cms/05-plotting/index.html">original lesson</a> from which this one was adapted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>     <span class="c1">#This initializes a new figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Check Your Understanding</p>
+<p>How would you get make the same plot using the iloc command?</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># THR4_ATP is the second column, and we want all rows</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting-with-x-and-y">
+<h3>Plotting with x and y<a class="headerlink" href="#plotting-with-x-and-y" title="Permalink to this headline">#</a></h3>
+<p>The data here are relatively straightforward, with the Frame column serving as a simple x value for the rest of the columns.  Often however, it is necessary to show trends or patterns in data in relation to a variety of independent variables.  If you have data that contains multiple x columns, it can be helpful to specify the x and y values we wish to use.  In with ‘pyplot’, the first two parameters in the ‘plot()’ function are ‘x’ and ‘y’ by default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="s2">&quot;Frame&quot;</span><span class="p">],</span> <span class="n">distances</span><span class="p">[</span><span class="s2">&quot;TYR6_ASP&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>‘x’ and ‘y’ must also be specified if we wanted to plot the data non-sequentially, say at regular intervals.  To do this we will use a new slicing syntax. To select frames at regular intervals, we can use the syntax ‘array[start:stop:interval]’.</p>
+<section id="slicing-at-regular-intervals">
+<h4>Slicing at regular intervals<a class="headerlink" href="#slicing-at-regular-intervals" title="Permalink to this headline">#</a></h4>
+<p>Let’s start with viewing this slice in a table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">:])</span>    <span class="c1"># to use the whole data set, simply leave out the stopping point integer, as before</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is our new figure:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="labels-and-legends">
+<h3>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this headline">#</a></h3>
+<p>To add labels and legends, add them to the initialized figure using ‘functions’ belonging to ‘pyplot’.  We can use variables to create them, which will also save us time later on.</p>
+<div class="tip admonition">
+<p class="admonition-title">Saving precious keystrokes</p>
+<p>The data labels in our set are all caps mixed with numbers and an underscore.  They are going to be cumbersome to reference, so we’ll assign them to a variable for later before moving on.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">columns</span>    <span class="c1"># Creates a list of column headers</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top</span><span class="p">:</span>    <span class="c1"># loop through headers and print them one by one</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Looks legit now, right?&#39;</span><span class="p">)</span>
+<span class="c1"># Now we can reference the columns with our new list of headers</span>
+<span class="n">fig_1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="different-kinds-of-charts">
+<h3>Different kinds of charts<a class="headerlink" href="#different-kinds-of-charts" title="Permalink to this headline">#</a></h3>
+<p>There are a variety of short strings that can be passed to the plot funtion convert the default line graph into a dashed line, scatter plot with various markers etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> Frame by Frame&#39;</span><span class="p">)</span>
+<span class="n">fig_2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> Frame by Frame&#39;</span><span class="p">)</span>
+<span class="c1"># a cleaner plot by taking intervals, changing the markers, adding a dashed line between them, and adjusting sizes</span>
+<span class="n">fig_3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;--*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a list of options you can use.</p>
+<blockquote>
+<div><p>character	description
+‘-’	solid line style
+‘–’	dashed line style
+‘-.’	dash-dot line style
+‘:’	dotted line style
+‘.’	point marker
+‘,’	pixel marker
+‘o’	circle marker
+‘v’	triangle_down marker
+‘^’	triangle_up marker
+‘&lt;’	triangle_left marker
+‘&gt;’	triangle_right marker
+‘1’	tri_down marker
+‘2’	tri_up marker
+‘3’	tri_left marker
+‘4’	tri_right marker
+‘s’	square marker
+‘p’	pentagon marker
+‘*’	star marker
+‘h’	hexagon1 marker
+‘H’	hexagon2 marker
+‘+’	plus marker
+‘x’	x marker
+‘D’	diamond marker
+‘d’	thin_diamond marker
+‘|’	vline marker
+‘_’	hline marker
+‘’’</p>
+</div></blockquote>
+</section>
+<section id="changing-color-and-image-size">
+<h3>Changing color and image size<a class="headerlink" href="#changing-color-and-image-size" title="Permalink to this headline">#</a></h3>
+<p>Before saving, let’s first learn how to change the colors and image size of our plots.  For more customizations see the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib.pyplot.plot function api</a></p>
+<p>The axes can also be customized using the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axes.html">plt.axes api</a></p>
+<div class="admonition-plotting-with-pandas admonition">
+<p class="admonition-title">Plotting with pandas</p>
+<p>:class: tip</p>
+<p>pandas has plotting functionality as well, using the syntax dataframe.plot().  It is particularly efficient at creating normal/stacked/nested bar graphs and pie charts.  If this is useful to you, check out the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">DataFrame.plot API</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>    <span class="c1"># Set the figure size when you initialize the figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
+<span class="c1"># set colors and linewidths in the plot funtion. separating parameters in lines for readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-the-figure-and-setting-the-resolution">
+<h3>Saving the Figure and Setting the Resolution<a class="headerlink" href="#saving-the-figure-and-setting-the-resolution" title="Permalink to this headline">#</a></h3>
+<p>Set the resolution when you save the image using the syntax ‘figure.savefig(filename, dpi)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># rename the variable with the figure to something more useful for a file</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="plotting-more-than-one-set-of-data">
+<h2>Plotting More Than One Set of Data<a class="headerlink" href="#plotting-more-than-one-set-of-data" title="Permalink to this headline">#</a></h2>
+<section id="multiple-sets-on-a-single-plot">
+<h3>Multiple Sets On a Single Plot<a class="headerlink" href="#multiple-sets-on-a-single-plot" title="Permalink to this headline">#</a></h3>
+<p>Adding additional data sets to the same plot can be done simpy by using a series of plot commands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2C7619&#39;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiple plots can also be added by taking a slice of the data, although this precludes customization.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Challenge Question</p>
+<p>If you made a custom list of colors, can you use a for loop to accomplish the same thing?  How about colors and markers?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Samples per 100 Frames&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">:],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-subplots-in-one-figure">
+<h3>Multiple Subplots in One Figure<a class="headerlink" href="#multiple-subplots-in-one-figure" title="Permalink to this headline">#</a></h3>
+<p>A figure composed of subplots can be created by setting the boolean parameter ‘subplots’ to true in the plot command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the subplots command initializes a figure and assigns it subplots.</span>
+<span class="c1"># this is two variables, a figure object and a list of plot objects, so we need to assign two variables</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">tracker</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># for the iloc command.  could also be used for the challenge question above</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">header</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="n">tracker</span><span class="p">],</span> 
+    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">tracker</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># normally the labels are attached to the axes objects, so for a subplot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Samples per 100 Frames&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">supxlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">supylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;subplot_all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-figures-using-loops">
+<h3>Multiple Figures Using Loops<a class="headerlink" href="#multiple-figures-using-loops" title="Permalink to this headline">#</a></h3>
+<p>Suppose instead in our reporting we wanted to discuss each plot in turn.  As long as the settings are consistent, we can generate, modify, and save a series of figures with a single block of code!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loop through the list of headers, creating a new figure with each cycle</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">top</span><span class="p">)):</span> 
+    <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">.png&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="p">],</span> 
+        <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
+        <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+        <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="range-len-list">
+<h4>range(len(list))<a class="headerlink" href="#range-len-list" title="Permalink to this headline">#</a></h4>
+<p>There are five headers in our data, so the ‘len(top)’ function returns 5.  Taking the range of the length however, returns a list object iterating over the indices of the list in the length function.
+So:
+len(top) == 5
+but
+range(len(top)) == [0,1,2,3,4]
+so
+range(1,len(top)) == [1,2,3,4]</p>
+<div class="exercise admonition">
+<p class="admonition-title">Challenge time!</p>
+<p>In our data reporting, it has been decided that we need to take each of the plots and overlay an average of all the samples for comparison.  We’ll need to create a column of the average distances between the 4 existing columns and graph that on top of each sample plot.  This will be too busy though, so we only want to graph one point for every hundred. Don’t have a lot of time either, so best use a for loop.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 - add the averages column</span>
+<span class="n">distances</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 2 - create the figures</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">top</span><span class="p">)):</span> 
+    <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">.png&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="p">],</span> 
+        <span class="s1">&#39;-s&#39;</span><span class="p">,</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
+        <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+        <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> 
+        <span class="s1">&#39;--&#39;</span><span class="p">,</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2C7619&#39;</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="key admonition">
+<p class="admonition-title">Key Points</p>
+<ul class="simple">
+<li><p>Use pandas to generate figures from tabular data with the ‘plot()’ function</p></li>
+<li><p>Create a variety of chart types with either the ‘kind’ keyword or the chart method</p></li>
+<li><p>Add labels, legends, color, and other stylistic choices to figures by passing parameters to plot</p></li>
+<li><p>Work with multiple data sets, either with the ‘iloc[]’ syntax, ‘for’ loops, or simple overlay</p></li>
+<li><p>Use the matplotlib.pyplot functions ‘get_figure()’ and ‘savefig()’ to save the figure to a file</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04-tabular-pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Analyzing Tabular Data</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Molecular Sciences Software Institute<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
