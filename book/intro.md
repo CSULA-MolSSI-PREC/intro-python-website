@@ -3,6 +3,8 @@ Overview
 
 These materials introduce Python programming, data analysis, file parsing, and creating plots.
 
+![alt](_static/../images/CSLA_MolSSI.png)
+
 
 ``````{admonition} Day 1 Overview
 :class: day-overview
