@@ -1,119 +1,181 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Plotting and Data Visualization &#8212; MolSSI and Cal State LA Workshop</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-FHKVGE8HKZ"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-FHKVGE8HKZ');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05-plotting-pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Analyzing Tabular Data" href="04-tabular-pandas.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FHKVGE8HKZ"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-FHKVGE8HKZ');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="_static/CSLA_MolSSI1.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">MolSSI and Cal State LA Workshop</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/CSLA_MolSSI1.png" class="logo__image only-light" alt="MolSSI and Cal State LA Workshop - Home"/>
+    <script>document.write(`<img src="_static/CSLA_MolSSI1.png" class="logo__image only-dark" alt="MolSSI and Cal State LA Workshop - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -123,443 +185,247 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="setup.html">
-   Set Up
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day1-overview.html">
-   Day 1 - Introduction to Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01-python-introduction.html">
-     Introduction to Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02-file-parsing.html">
-     File Parsing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03-multiple-file.html">
-     Processing Multiple Files and Writing Files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="day2-overview.html">
-   Day 2 - Data Analysis and Plotting
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="04-tabular-pandas.html">
-     Analyzing Tabular Data
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Plotting and Data Visualization
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Set Up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-python-introduction.html">Introduction to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-file-parsing.html">File Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-multiple-file.html">Processing Multiple Files and Writing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data Analysis and Plotting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="04-tabular-pandas.html">Analyzing Tabular Data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting and Data Visualization</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/MolSSI-Education/WORKSHOP_NAME/main?urlpath=tree/book/05-plotting-pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MolSSI-Education/WORKSHOP_NAME" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2F05-plotting-pandas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/05-plotting-pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2F05-plotting-pandas.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/05-plotting-pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prepare-data-for-plotting">
-   Prepare data for plotting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-data">
-   Plotting Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-with-x-and-y">
-     Plotting with x and y
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#slicing-at-regular-intervals">
-       Slicing at regular intervals
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#labels-and-legends">
-     Labels and Legends
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#different-kinds-of-charts">
-     Different kinds of charts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-color-and-image-size">
-     Changing color and image size
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">
-     Saving the Figure and Setting the Resolution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">
-   Plotting More Than One Set of Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">
-     Multiple Sets On a Single Plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">
-     Multiple Subplots in One Figure
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-figures-using-loops">
-     Multiple Figures Using Loops
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#range-len-list">
-       range(len(list))
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Plotting and Data Visualization</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prepare-data-for-plotting">
-   Prepare data for plotting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-data">
-   Plotting Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-with-x-and-y">
-     Plotting with x and y
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#slicing-at-regular-intervals">
-       Slicing at regular intervals
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#labels-and-legends">
-     Labels and Legends
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#different-kinds-of-charts">
-     Different kinds of charts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-color-and-image-size">
-     Changing color and image size
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">
-     Saving the Figure and Setting the Resolution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">
-   Plotting More Than One Set of Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">
-     Multiple Sets On a Single Plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">
-     Multiple Subplots in One Figure
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-figures-using-loops">
-     Multiple Figures Using Loops
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#range-len-list">
-       range(len(list))
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plotting and Data Visualization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-plotting">Prepare data for plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-data">Plotting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-at-regular-intervals">Slicing at regular intervals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-charts">Different kinds of charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-color-and-image-size">Changing color and image size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">Saving the Figure and Setting the Resolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">Plotting More Than One Set of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">Multiple Sets On a Single Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">Multiple Subplots in One Figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures-using-loops">Multiple Figures Using Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-len-list">range(len(list))</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="plotting-and-data-visualization">
-<h1>Plotting and Data Visualization<a class="headerlink" href="#plotting-and-data-visualization" title="Permalink to this headline">#</a></h1>
+<h1>Plotting and Data Visualization<a class="headerlink" href="#plotting-and-data-visualization" title="Permalink to this heading">#</a></h1>
 <div class="overview admonition">
 <p class="admonition-title">Overview</p>
 <p>Questions:</p>
@@ -577,7 +443,7 @@ title="Print to PDF"
 </div>
 <p>Plotting is one of the most effective methods of representing numerical data and illustrating their patterns and trends.  There are a number of applications that facilitate graph creation (Excel, Origin, SciDavis, etc.), but these methods can be time consuming, tedious, and at times inflexible.  We have already seen the potential of coding for reading/editing/saving multiple files at once, as well as in creating tables from raw data in a ‘CSV’ file.  Taking what we have learned so far, we will focus in this module on creating plots from the data in the previous lesson, customizing the plots with color, design, labels and legends, and using loops to create multiple figures at once.</p>
 <section id="prepare-data-for-plotting">
-<h2>Prepare data for plotting<a class="headerlink" href="#prepare-data-for-plotting" title="Permalink to this headline">#</a></h2>
+<h2>Prepare data for plotting<a class="headerlink" href="#prepare-data-for-plotting" title="Permalink to this heading">#</a></h2>
 <p>First, we need to import pandas and load our data into variables.  These lines should look familiar from the previous lesson.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -713,7 +579,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="plotting-data">
-<h2>Plotting Data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">#</a></h2>
+<h2>Plotting Data<a class="headerlink" href="#plotting-data" title="Permalink to this heading">#</a></h2>
 <p>A data set is plotted using the ‘plot()’ function of matplotlib.pyplot.  By using the pandas DataFrame object for our tabular data, we can refer to the desired column by its header name.  If you want to see how this simplifies working with our data, check out the “Prepare for Plotting section” at the top of the <a class="reference external" href="https://education.molssi.org/python_scripting_cms/05-plotting/index.html">original lesson</a> from which this one was adapted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -733,7 +599,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe676957bd0&gt;]
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_4_1.png" src="_images/05-plotting-pandas_4_1.png" />
+<img alt="_images/baec4c2cf4fc2a78b25ed7ae178a1da90835266d1424b12498bab3939fe731b8.png" src="_images/baec4c2cf4fc2a78b25ed7ae178a1da90835266d1424b12498bab3939fe731b8.png" />
 </div>
 </div>
 <div class="exercise admonition">
@@ -749,7 +615,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="plotting-with-x-and-y">
-<h3>Plotting with x and y<a class="headerlink" href="#plotting-with-x-and-y" title="Permalink to this headline">#</a></h3>
+<h3>Plotting with x and y<a class="headerlink" href="#plotting-with-x-and-y" title="Permalink to this heading">#</a></h3>
 <p>The data here are relatively straightforward, with the Frame column serving as a simple x value for the rest of the columns.  Often however, it is necessary to show trends or patterns in data in relation to a variety of independent variables.  If you have data that contains multiple x columns, it can be helpful to specify the x and y values we wish to use.  In with ‘pyplot’, the first two parameters in the ‘plot()’ function are ‘x’ and ‘y’ by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,12 +628,12 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f807b10&gt;]
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_7_1.png" src="_images/05-plotting-pandas_7_1.png" />
+<img alt="_images/4b920478822c59fbf7e77f45368bd412a789bb49acca7fb530bb6d5190ad33b2.png" src="_images/4b920478822c59fbf7e77f45368bd412a789bb49acca7fb530bb6d5190ad33b2.png" />
 </div>
 </div>
 <p>‘x’ and ‘y’ must also be specified if we wanted to plot the data non-sequentially, say at regular intervals.  To do this we will use a new slicing syntax. To select frames at regular intervals, we can use the syntax ‘array[start:stop:interval]’.</p>
 <section id="slicing-at-regular-intervals">
-<h4>Slicing at regular intervals<a class="headerlink" href="#slicing-at-regular-intervals" title="Permalink to this headline">#</a></h4>
+<h4>Slicing at regular intervals<a class="headerlink" href="#slicing-at-regular-intervals" title="Permalink to this heading">#</a></h4>
 <p>Let’s start with viewing this slice in a table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,13 +669,13 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f71ec90&gt;]
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_11_1.png" src="_images/05-plotting-pandas_11_1.png" />
+<img alt="_images/f70cc7e931d8249a155523c1fa1ea6cc6479b2782b65daecb4a8e8548a765f86.png" src="_images/f70cc7e931d8249a155523c1fa1ea6cc6479b2782b65daecb4a8e8548a765f86.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="labels-and-legends">
-<h3>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this headline">#</a></h3>
+<h3>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this heading">#</a></h3>
 <p>To add labels and legends, add them to the initialized figure using ‘functions’ belonging to ‘pyplot’.  We can use variables to create them, which will also save us time later on.</p>
 <div class="tip admonition">
 <p class="admonition-title">Saving precious keystrokes</p>
@@ -849,12 +715,12 @@ TYR6_ASP
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60f774ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_14_1.png" src="_images/05-plotting-pandas_14_1.png" />
+<img alt="_images/c388f105c50c3a7704d815c35720d16373bf3d5d31d2b7708747c6be3809a030.png" src="_images/c388f105c50c3a7704d815c35720d16373bf3d5d31d2b7708747c6be3809a030.png" />
 </div>
 </div>
 </section>
 <section id="different-kinds-of-charts">
-<h3>Different kinds of charts<a class="headerlink" href="#different-kinds-of-charts" title="Permalink to this headline">#</a></h3>
+<h3>Different kinds of charts<a class="headerlink" href="#different-kinds-of-charts" title="Permalink to this heading">#</a></h3>
 <p>There are a variety of short strings that can be passed to the plot funtion convert the default line graph into a dashed line, scatter plot with various markers etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -871,7 +737,7 @@ TYR6_ASP
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075f4ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_16_1.png" src="_images/05-plotting-pandas_16_1.png" />
+<img alt="_images/70cd41cba0700c764583db73573d5a393eea0d2fb7442ca0adaeeea6a342a69d.png" src="_images/70cd41cba0700c764583db73573d5a393eea0d2fb7442ca0adaeeea6a342a69d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -890,11 +756,11 @@ TYR6_ASP
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe607624ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_17_1.png" src="_images/05-plotting-pandas_17_1.png" />
+<img alt="_images/56bf14f5b40a76a375f762267eb5f5c5e9bda6b5c6db7e4166a1a7006e1a9d23.png" src="_images/56bf14f5b40a76a375f762267eb5f5c5e9bda6b5c6db7e4166a1a7006e1a9d23.png" />
 </div>
 </div>
 <p>Here is a list of options you can use.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>character</p></th>
 <th class="head"><p>description</p></th>
@@ -980,7 +846,7 @@ TYR6_ASP
 </table>
 </section>
 <section id="changing-color-and-image-size">
-<h3>Changing color and image size<a class="headerlink" href="#changing-color-and-image-size" title="Permalink to this headline">#</a></h3>
+<h3>Changing color and image size<a class="headerlink" href="#changing-color-and-image-size" title="Permalink to this heading">#</a></h3>
 <p>Before saving, let’s first learn how to change the colors and image size of our plots.  For more customizations see the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib.pyplot.plot function api</a></p>
 <p>The axes can also be customized using the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axes.html">plt.axes api</a></p>
 <div class="tip admonition">
@@ -1013,12 +879,12 @@ TYR6_ASP
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075b3350&gt;
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_20_1.png" src="_images/05-plotting-pandas_20_1.png" />
+<img alt="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" src="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" />
 </div>
 </div>
 </section>
 <section id="saving-the-figure-and-setting-the-resolution">
-<h3>Saving the Figure and Setting the Resolution<a class="headerlink" href="#saving-the-figure-and-setting-the-resolution" title="Permalink to this headline">#</a></h3>
+<h3>Saving the Figure and Setting the Resolution<a class="headerlink" href="#saving-the-figure-and-setting-the-resolution" title="Permalink to this heading">#</a></h3>
 <p>Set the resolution when you save the image using the syntax ‘figure.savefig(filename, dpi)’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,15 +910,15 @@ TYR6_ASP
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/05-plotting-pandas_22_0.png" src="_images/05-plotting-pandas_22_0.png" />
+<img alt="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" src="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="plotting-more-than-one-set-of-data">
-<h2>Plotting More Than One Set of Data<a class="headerlink" href="#plotting-more-than-one-set-of-data" title="Permalink to this headline">#</a></h2>
+<h2>Plotting More Than One Set of Data<a class="headerlink" href="#plotting-more-than-one-set-of-data" title="Permalink to this heading">#</a></h2>
 <section id="multiple-sets-on-a-single-plot">
-<h3>Multiple Sets On a Single Plot<a class="headerlink" href="#multiple-sets-on-a-single-plot" title="Permalink to this headline">#</a></h3>
+<h3>Multiple Sets On a Single Plot<a class="headerlink" href="#multiple-sets-on-a-single-plot" title="Permalink to this heading">#</a></h3>
 <p>Adding additional data sets to the same plot can be done simpy by using a series of plot commands.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1090,7 +956,7 @@ TYR6_ASP
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60737b350&gt;
 </pre></div>
 </div>
-<img alt="_images/05-plotting-pandas_24_1.png" src="_images/05-plotting-pandas_24_1.png" />
+<img alt="_images/6814f26b1b150b5781ae271b832898b254d769fd363a115a4e93976e7bbb0b73.png" src="_images/6814f26b1b150b5781ae271b832898b254d769fd363a115a4e93976e7bbb0b73.png" />
 </div>
 </div>
 <p>Multiple plots can also be added by taking a slice of the data, although this precludes customization.</p>
@@ -1120,12 +986,12 @@ TYR6_ASP
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/05-plotting-pandas_26_0.png" src="_images/05-plotting-pandas_26_0.png" />
+<img alt="_images/a52ed7093bdca3cd1d89c968b97bfc2c1595049f831c0cbf0dc27f5952bc9427.png" src="_images/a52ed7093bdca3cd1d89c968b97bfc2c1595049f831c0cbf0dc27f5952bc9427.png" />
 </div>
 </div>
 </section>
 <section id="multiple-subplots-in-one-figure">
-<h3>Multiple Subplots in One Figure<a class="headerlink" href="#multiple-subplots-in-one-figure" title="Permalink to this headline">#</a></h3>
+<h3>Multiple Subplots in One Figure<a class="headerlink" href="#multiple-subplots-in-one-figure" title="Permalink to this heading">#</a></h3>
 <p>A figure composed of subplots can be created by setting the boolean parameter ‘subplots’ to true in the plot command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1158,12 +1024,12 @@ TYR6_ASP
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/05-plotting-pandas_28_0.png" src="_images/05-plotting-pandas_28_0.png" />
+<img alt="_images/a8b6fdf8938edec865c1a72a4d2077dface8fce35ae342b0454aeee74ea24274.png" src="_images/a8b6fdf8938edec865c1a72a4d2077dface8fce35ae342b0454aeee74ea24274.png" />
 </div>
 </div>
 </section>
 <section id="multiple-figures-using-loops">
-<h3>Multiple Figures Using Loops<a class="headerlink" href="#multiple-figures-using-loops" title="Permalink to this headline">#</a></h3>
+<h3>Multiple Figures Using Loops<a class="headerlink" href="#multiple-figures-using-loops" title="Permalink to this heading">#</a></h3>
 <p>Suppose instead in our reporting we wanted to discuss each plot in turn.  As long as the settings are consistent, we can generate, modify, and save a series of figures with a single block of code!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1191,14 +1057,14 @@ TYR6_ASP
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/05-plotting-pandas_30_0.png" src="_images/05-plotting-pandas_30_0.png" />
-<img alt="_images/05-plotting-pandas_30_1.png" src="_images/05-plotting-pandas_30_1.png" />
-<img alt="_images/05-plotting-pandas_30_2.png" src="_images/05-plotting-pandas_30_2.png" />
-<img alt="_images/05-plotting-pandas_30_3.png" src="_images/05-plotting-pandas_30_3.png" />
+<img alt="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" src="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" />
+<img alt="_images/903ad038649f09dafd4df86b618d4cd4eee716c71b39f98ca9723523036bea81.png" src="_images/903ad038649f09dafd4df86b618d4cd4eee716c71b39f98ca9723523036bea81.png" />
+<img alt="_images/fca5337e2f56d2bf6118f48ec0ddd01fd0f5e8fc7c188006ea813b458ec0b182.png" src="_images/fca5337e2f56d2bf6118f48ec0ddd01fd0f5e8fc7c188006ea813b458ec0b182.png" />
+<img alt="_images/ad5dcdb9a7580192263d22d9a781fdcf1632fbb0fd863c3d5e4d8afed596d0e4.png" src="_images/ad5dcdb9a7580192263d22d9a781fdcf1632fbb0fd863c3d5e4d8afed596d0e4.png" />
 </div>
 </div>
 <section id="range-len-list">
-<h4>range(len(list))<a class="headerlink" href="#range-len-list" title="Permalink to this headline">#</a></h4>
+<h4>range(len(list))<a class="headerlink" href="#range-len-list" title="Permalink to this heading">#</a></h4>
 <p>There are five headers in our data, so the ‘len(top)’ function returns 5.  Taking the range of the length however, returns a list object iterating over the indices of the list in the length function.
 So:
 len(top) == 5
@@ -1273,7 +1139,7 @@ range(1,len(top)) == [1,2,3,4]</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1281,43 +1147,114 @@ range(1,len(top)) == [1,2,3,4]</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04-tabular-pandas.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Analyzing Tabular Data</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-tabular-pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Analyzing Tabular Data</p>
+      </div>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-plotting">Prepare data for plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-data">Plotting Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-at-regular-intervals">Slicing at regular intervals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-charts">Different kinds of charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-color-and-image-size">Changing color and image size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">Saving the Figure and Setting the Resolution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">Plotting More Than One Set of Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">Multiple Sets On a Single Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">Multiple Subplots in One Figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures-using-loops">Multiple Figures Using Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-len-list">range(len(list))</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By The Molecular Sciences Software Institute<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By The Molecular Sciences Software Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
