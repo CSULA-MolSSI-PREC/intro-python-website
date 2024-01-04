@@ -10,4 +10,5 @@ chapters:
 - file: day2-overview
   sections:
   - file: 04-tabular-pandas
+  - file: debugging_worksheet.md
   - file: 05-plotting-pandas
