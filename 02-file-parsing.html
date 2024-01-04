@@ -195,6 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data Analysis and Plotting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="04-tabular-pandas.html">Analyzing Tabular Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging_worksheet.html">Troubleshooting and “Debugging” Python Programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05-plotting-pandas.html">Plotting and Data Visualization</a></li>
 </ul>
 </li>
@@ -482,6 +483,12 @@ When deciding your file path, you can think about what you would tell someone to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ethanol_file</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/ethanol.out&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ethanol_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/outfiles/ethanol.out
 </pre></div>
 </div>
 </div>
@@ -490,12 +497,12 @@ When deciding your file path, you can think about what you would tell someone to
 </section>
 <section id="reading-a-file">
 <h2>Reading a file<a class="headerlink" href="#reading-a-file" title="Permalink to this heading">#</a></h2>
-<p>In Python, there are many ways in python to read in information from a text file.
+<p>In Python, there are many ways to read in information from a text file.
 The best method to use depends on the type of data and the type of analysis you are performing.
 We will use the <code class="docutils literal notranslate"><span class="pre">open</span></code> function to open the file, and another function called <code class="docutils literal notranslate"><span class="pre">readlines</span></code> to pull information out of the file.
 If you have a file with lots of different types of information, text and numbers, with different types of formatting, the most generic way to read in information is the <code class="docutils literal notranslate"><span class="pre">read</span></code> or <code class="docutils literal notranslate"><span class="pre">readlines</span></code> function.
 Before you can read in a file, you have to open the file using the file path we defined above.
-This will create a file object, or filehandle. The file we will be analyzing in this example is a PSI4 output file for a SCF/cc-pVDZ energy calculation for an ethanol molecule.</p>
+This will create a file object, or filehandle. The file we will be analyzing in this example is a Psi4 output file for a SCF/cc-pVDZ energy calculation for an ethanol molecule.</p>
 <p>In Python, when we use the <code class="docutils literal notranslate"><span class="pre">open</span></code> function, the syntax is</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">open_mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">variable</span><span class="p">:</span>
     <span class="c1"># read the file</span>
@@ -633,7 +640,7 @@ Why do you think that is?</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy</span> <span class="o">+</span> <span class="mi">50</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
