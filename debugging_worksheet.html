@@ -446,19 +446,6 @@ The message will also show the code where the error occurred, and show an arrow 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">carbon</span> <span class="o">=</span> <span class="mf">12.011</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">hydrogen</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">methane_weight</span> <span class="o">=</span> <span class="n">cabon</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">hydrogen</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">methane_weight</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cabon&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Use this box to identify the error that occurred above. How would you fix it?</p>
 <p><br><br><br><br><br><br><br><br><br></p>
@@ -471,41 +458,20 @@ The message will also show the code where the error occurred, and show an arrow 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Use this box to identify the error that occurred above. How would you fix it?</p>
 <p><br><br><br><br><br><br><br><br><br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is an example of code with an indentation error in a for loop</span>
-
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">times_10_list</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
     <span class="n">times_10</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">times_10</span><span class="p">)</span>  <span class="c1"># This line has an indentation error</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times_10</span><span class="p">)</span> 
     <span class="n">times_10_list</span> <span class="o">=</span> <span class="n">times_10_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times_10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-    <span class="n">times_10_list</span> <span class="o">=</span> <span class="n">times_10_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times_10</span><span class="p">)</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: unexpected indent
+
+<span class="nb">print</span><span class="p">(</span><span class="n">times_10_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
