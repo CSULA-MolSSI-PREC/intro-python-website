@@ -395,19 +395,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-plotting">Prepare data for plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-data">Plotting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-at-regular-intervals">Slicing at regular intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-data-set-at-a-time">Plotting more than one data set at a time</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-charts">Different kinds of charts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-color-and-image-size">Changing color and image size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">Saving the Figure and Setting the Resolution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">Plotting More Than One Set of Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">Multiple Sets On a Single Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">Multiple Subplots in One Figure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures-using-loops">Multiple Figures Using Loops</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-len-list">range(len(list))</a></li>
 </ul>
@@ -597,10 +592,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe676957bd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2270ac4c10&gt;]
 </pre></div>
 </div>
-<img alt="_images/baec4c2cf4fc2a78b25ed7ae178a1da90835266d1424b12498bab3939fe731b8.png" src="_images/baec4c2cf4fc2a78b25ed7ae178a1da90835266d1424b12498bab3939fe731b8.png" />
+<img alt="_images/8cbcb59147bd9bf5d6b30224f8038fb5e783c7de83eff94e1c0b2f6aae1a1b37.png" src="_images/8cbcb59147bd9bf5d6b30224f8038fb5e783c7de83eff94e1c0b2f6aae1a1b37.png" />
 </div>
 </div>
 <div class="exercise admonition">
@@ -626,138 +621,124 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f807b10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2270984a90&gt;]
 </pre></div>
 </div>
-<img alt="_images/4b920478822c59fbf7e77f45368bd412a789bb49acca7fb530bb6d5190ad33b2.png" src="_images/4b920478822c59fbf7e77f45368bd412a789bb49acca7fb530bb6d5190ad33b2.png" />
+<img alt="_images/4e321d627f59f500721087e027353c65a111a97fadbebc9911b1723995ffa533.png" src="_images/4e321d627f59f500721087e027353c65a111a97fadbebc9911b1723995ffa533.png" />
 </div>
 </div>
-<p>‘x’ and ‘y’ must also be specified if we wanted to plot the data non-sequentially, say at regular intervals.  To do this we will use a new slicing syntax. To select frames at regular intervals, we can use the syntax ‘array[start:stop:interval]’.</p>
-<section id="slicing-at-regular-intervals">
-<h4>Slicing at regular intervals<a class="headerlink" href="#slicing-at-regular-intervals" title="Permalink to this heading">#</a></h4>
-<p>Let’s start with viewing this slice in a table</p>
+<p>It may be a little hard to see the effects of changing the style of the plot at this scale.
+Let’s slice our data so we can only see the first 100 points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">:])</span>    <span class="c1"># to use the whole data set, simply leave out the stopping point integer, as before</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_data</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">,:]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;Frame&quot;</span><span class="p">],</span> <span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;TYR6_ASP&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     THR4_ATP  THR4_ASP  TYR6_ATP  TYR6_ASP
-0      8.9542    5.8024   11.5478    9.9557
-100    9.0139    5.7436   13.9145   10.7853
-200   11.5060    8.9265   15.2785   12.0995
-300   13.2053    7.6506   15.8632   12.0482
-400   10.8274    7.6897   14.1698   12.2827
-500   13.0953    7.6354   15.6024   12.5670
-600   15.1074    5.9674   14.8006    9.6562
-700   14.6342    6.2847   14.4311    9.7521
-800   14.0266    7.6997   12.9560    9.7198
-900   15.0463    6.7667   13.9174    9.3867
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f22709e9910&gt;]
 </pre></div>
 </div>
+<img alt="_images/c9abb90e2ccfe6021c0e7746d002d338260c2f00b1cf07c7fb2864dda28f793b.png" src="_images/c9abb90e2ccfe6021c0e7746d002d338260c2f00b1cf07c7fb2864dda28f793b.png" />
 </div>
 </div>
-<p>Here is our new figure:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe60f71ec90&gt;]
-</pre></div>
-</div>
-<img alt="_images/f70cc7e931d8249a155523c1fa1ea6cc6479b2782b65daecb4a8e8548a765f86.png" src="_images/f70cc7e931d8249a155523c1fa1ea6cc6479b2782b65daecb4a8e8548a765f86.png" />
-</div>
-</div>
-</section>
 </section>
 <section id="labels-and-legends">
 <h3>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this heading">#</a></h3>
-<p>To add labels and legends, add them to the initialized figure using ‘functions’ belonging to ‘pyplot’.  We can use variables to create them, which will also save us time later on.</p>
-<div class="tip admonition">
-<p class="admonition-title">Saving precious keystrokes</p>
-<p>The data labels in our set are all caps mixed with numbers and an underscore.  They are going to be cumbersome to reference, so we’ll assign them to a variable for later before moving on.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">columns</span>    <span class="c1"># Creates a list of column headers</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top</span><span class="p">:</span>    <span class="c1"># loop through headers and print them one by one</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Frame
-THR4_ATP
-THR4_ASP
-TYR6_ATP
-TYR6_ASP
-</pre></div>
-</div>
-</div>
-</div>
+<p>If we are creating a plot to add to a report or presentation, we will want to add labels to our axes and a legend to our plot.  We can do this using the ‘xlabel()’, ‘ylabel()’, and ‘legend()’ functions.  The ‘legend()’ function takes a list of strings as an argument, which will be used to label each line in the order they were plotted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Looks legit now, right?&#39;</span><span class="p">)</span>
-<span class="c1"># Now we can reference the columns with our new list of headers</span>
-<span class="n">fig_1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (angstrom)&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;Frame&quot;</span><span class="p">],</span> <span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;THR4_ATP&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60f774ed0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f227084a550&gt;
 </pre></div>
 </div>
-<img alt="_images/c388f105c50c3a7704d815c35720d16373bf3d5d31d2b7708747c6be3809a030.png" src="_images/c388f105c50c3a7704d815c35720d16373bf3d5d31d2b7708747c6be3809a030.png" />
+<img alt="_images/eb7b25ecf4ee41eee92bcf5603166a124315915e3e234e33d27dce5720e1107f.png" src="_images/eb7b25ecf4ee41eee92bcf5603166a124315915e3e234e33d27dce5720e1107f.png" />
 </div>
 </div>
 </section>
+</section>
+<section id="plotting-more-than-one-data-set-at-a-time">
+<h2>Plotting more than one data set at a time<a class="headerlink" href="#plotting-more-than-one-data-set-at-a-time" title="Permalink to this heading">#</a></h2>
+<p>To plot more than one dataset at a time, we can pass multiple columns
+to the ‘plot()’ function. We can label the data using the headers of the
+dataframe by passing the column names to the ‘label’ keyword argument</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_column</span> <span class="o">=</span> <span class="n">plot_data</span><span class="p">[</span><span class="s2">&quot;Frame&quot;</span><span class="p">]</span>
+<span class="n">y_columns</span> <span class="o">=</span> <span class="n">plot_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">y_columns</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (angstrom)&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_column</span><span class="p">,</span> <span class="n">y_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f22683ca550&gt;
+</pre></div>
+</div>
+<img alt="_images/d635cffb956dbee2d90fb216683c34273a9eda8ee0e8afd87bb35026a685c741.png" src="_images/d635cffb956dbee2d90fb216683c34273a9eda8ee0e8afd87bb35026a685c741.png" />
+</div>
+</div>
 <section id="different-kinds-of-charts">
 <h3>Different kinds of charts<a class="headerlink" href="#different-kinds-of-charts" title="Permalink to this heading">#</a></h3>
-<p>There are a variety of short strings that can be passed to the plot funtion convert the default line graph into a dashed line, scatter plot with various markers etc.</p>
+<p>Matplotlib can make a variety of plots.
+If you’re using <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>, you can change the line and marker style by adding a string before the “label” argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> Frame by Frame&#39;</span><span class="p">)</span>
-<span class="n">fig_2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">distances</span><span class="p">[</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (angstrom)&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_column</span><span class="p">,</span> <span class="n">y_columns</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075f4ed0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2268326390&gt;
 </pre></div>
 </div>
-<img alt="_images/70cd41cba0700c764583db73573d5a393eea0d2fb7442ca0adaeeea6a342a69d.png" src="_images/70cd41cba0700c764583db73573d5a393eea0d2fb7442ca0adaeeea6a342a69d.png" />
+<img alt="_images/cbc9f5d6f38b10c415082b8b733b785b3ef617cebb29cda5fbc4eda6ddda718f.png" src="_images/cbc9f5d6f38b10c415082b8b733b785b3ef617cebb29cda5fbc4eda6ddda718f.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1"> Frame by Frame&#39;</span><span class="p">)</span>
-<span class="c1"># a cleaner plot by taking intervals, changing the markers, adding a dashed line between them, and adjusting sizes</span>
-<span class="n">fig_3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;--*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (angstrom)&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_column</span><span class="p">,</span> <span class="n">y_columns</span><span class="p">,</span> <span class="s1">&#39;--*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe607624ed0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2270b1a550&gt;
 </pre></div>
 </div>
-<img alt="_images/56bf14f5b40a76a375f762267eb5f5c5e9bda6b5c6db7e4166a1a7006e1a9d23.png" src="_images/56bf14f5b40a76a375f762267eb5f5c5e9bda6b5c6db7e4166a1a7006e1a9d23.png" />
+<img alt="_images/4123a5cb173917ee0aa2d8e33888715c41b5759e47b6b96c2be24b90011c0afc.png" src="_images/4123a5cb173917ee0aa2d8e33888715c41b5759e47b6b96c2be24b90011c0afc.png" />
 </div>
 </div>
 <p>Here is a list of options you can use.</p>
@@ -854,178 +835,24 @@ TYR6_ASP
 <p class="admonition-title">Plotting with pandas</p>
 <p>pandas has plotting functionality as well, using the syntax dataframe.plot().  It is particularly efficient at creating normal/stacked/nested bar graphs and pie charts.  If this is useful to you, check out the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">DataFrame.plot API</a></p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>    <span class="c1"># Set the figure size when you initialize the figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>    <span class="c1"># Gettin&#39; fancy with unicode characters</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
-<span class="c1"># set colors and linewidths in the plot funtion. separating parameters in lines for readability</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe6075b3350&gt;
-</pre></div>
-</div>
-<img alt="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" src="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" />
-</div>
-</div>
 </section>
 <section id="saving-the-figure-and-setting-the-resolution">
 <h3>Saving the Figure and Setting the Resolution<a class="headerlink" href="#saving-the-figure-and-setting-the-resolution" title="Permalink to this heading">#</a></h3>
 <p>Set the resolution when you save the image using the syntax ‘figure.savefig(filename, dpi)’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="c1"># rename the variable with the figure to something more useful for a file</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" src="_images/463729b0f3bed8f186c7d89d8a02a9f21834897ca8e3fe2219d83283b1af8cde.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="plotting-more-than-one-set-of-data">
-<h2>Plotting More Than One Set of Data<a class="headerlink" href="#plotting-more-than-one-set-of-data" title="Permalink to this heading">#</a></h2>
-<section id="multiple-sets-on-a-single-plot">
-<h3>Multiple Sets On a Single Plot<a class="headerlink" href="#multiple-sets-on-a-single-plot" title="Permalink to this heading">#</a></h3>
-<p>Adding additional data sets to the same plot can be done simpy by using a series of plot commands.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> per 100 Frames&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;000000&#39;</span><span class="p">,</span>
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2C7619&#39;</span><span class="p">,</span>
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe60737b350&gt;
-</pre></div>
-</div>
-<img alt="_images/6814f26b1b150b5781ae271b832898b254d769fd363a115a4e93976e7bbb0b73.png" src="_images/6814f26b1b150b5781ae271b832898b254d769fd363a115a4e93976e7bbb0b73.png" />
-</div>
-</div>
-<p>Multiple plots can also be added by taking a slice of the data, although this precludes customization.</p>
-<div class="exercise admonition">
-<p class="admonition-title">Challenge Question</p>
-<p>If you made a custom list of colors, can you use a for loop to accomplish the same thing?  How about colors and markers?</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Samples per 100 Frames&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-    <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">:],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/a52ed7093bdca3cd1d89c968b97bfc2c1595049f831c0cbf0dc27f5952bc9427.png" src="_images/a52ed7093bdca3cd1d89c968b97bfc2c1595049f831c0cbf0dc27f5952bc9427.png" />
-</div>
-</div>
-</section>
-<section id="multiple-subplots-in-one-figure">
-<h3>Multiple Subplots in One Figure<a class="headerlink" href="#multiple-subplots-in-one-figure" title="Permalink to this heading">#</a></h3>
-<p>A figure composed of subplots can be created by setting the boolean parameter ‘subplots’ to true in the plot command.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the subplots command initializes a figure and assigns it subplots.</span>
-<span class="c1"># this is two variables, a figure object and a list of plot objects, so we need to assign two variables</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distance (angstrom)&#39;</span><span class="p">)</span> 
 
-<span class="n">tracker</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># for the iloc command.  could also be used for the challenge question above</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">header</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">top</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> 
-        <span class="n">distances</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="mi">100</span><span class="p">,</span><span class="n">tracker</span><span class="p">],</span> 
-    <span class="s1">&#39;--s&#39;</span><span class="p">,</span> 
-    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFCE00&#39;</span><span class="p">,</span>
-    <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
-    <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">label</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">tracker</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="c1"># normally the labels are attached to the axes objects, so for a subplot</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Samples per 100 Frames&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">supxlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">supylabel</span><span class="p">(</span><span class="s1">&#39;distance (</span><span class="se">\u212B</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;subplot_all.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_column</span><span class="p">,</span> <span class="n">y_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;first_100_frames.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8b6fdf8938edec865c1a72a4d2077dface8fce35ae342b0454aeee74ea24274.png" src="_images/a8b6fdf8938edec865c1a72a4d2077dface8fce35ae342b0454aeee74ea24274.png" />
+<img alt="_images/d635cffb956dbee2d90fb216683c34273a9eda8ee0e8afd87bb35026a685c741.png" src="_images/d635cffb956dbee2d90fb216683c34273a9eda8ee0e8afd87bb35026a685c741.png" />
 </div>
 </div>
 </section>
@@ -1185,19 +1012,14 @@ range(1,len(top)) == [1,2,3,4]</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-data-for-plotting">Prepare data for plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-data">Plotting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-at-regular-intervals">Slicing at regular intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-x-and-y">Plotting with x and y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labels-and-legends">Labels and Legends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-data-set-at-a-time">Plotting more than one data set at a time</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#different-kinds-of-charts">Different kinds of charts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-color-and-image-size">Changing color and image size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-and-setting-the-resolution">Saving the Figure and Setting the Resolution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-set-of-data">Plotting More Than One Set of Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-sets-on-a-single-plot">Multiple Sets On a Single Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots-in-one-figure">Multiple Subplots in One Figure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-figures-using-loops">Multiple Figures Using Loops</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-len-list">range(len(list))</a></li>
 </ul>

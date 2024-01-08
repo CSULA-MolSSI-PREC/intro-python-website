@@ -411,13 +411,13 @@ document.write(`
 <h1>Troubleshooting and “Debugging” Python Programs<a class="headerlink" href="#troubleshooting-and-debugging-python-programs" title="Permalink to this heading">#</a></h1>
 <p>Troubleshooting, also called “debugging” in computer science,  is the process of finding and fixing errors in your code.
 It is an important skill for any programmer. In this worksheet, we will practice debugging by finding and fixing errors in some code.
-You will do this with pen and paper.
+You should try to do this without writing code first.
+Just read the code and try to predict what it will do and how to fix it.
 After you have made predictions about the code, you can run it in Python to check your answers.</p>
 <section id="reading-python-error-messages">
 <h2>Reading Python Error Messages<a class="headerlink" href="#reading-python-error-messages" title="Permalink to this heading">#</a></h2>
 <p>When you run a Python program, you may see an error message.
 The error message will tell you what went wrong and where it went wrong.
-It will also give you a “traceback” which shows you the sequence of function calls that led to the error.
 In Python, when you get an error, you should start reading <strong>at the bottom of the traceback</strong>.
 The bottom of the traceback will tell you what went wrong.
 The message will also show the code where the error occurred, and show an arrow pointing to the exact location of the error.</p>
@@ -472,6 +472,44 @@ The message will also show the code where the error occurred, and show an arrow 
     <span class="n">times_10_list</span> <span class="o">=</span> <span class="n">times_10_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times_10</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">times_10_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use this box to identify the error that occurred above. How would you fix it?</p>
+<p><br><br><br><br><br><br><br><br><br></p>
+<p>Sometimes, the error message will contains code from multiple functions,
+with the error occurring at the place where the <code class="docutils literal notranslate"><span class="pre">----&gt;</span></code> arrow is pointing.
+This is called a “Traceback” because you can trace the sequence of function calls that led to the error.
+Sometimes when you see a traceback, the code that is highlighted will be from another function that you did not write.</p>
+<p>Typically when you encounter a traceback, you will want to “trace back” the code until you find the part you wrote. Try to use this strategy in the example below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ethanol_file</span> <span class="o">=</span> <span class="s2">&quot;data/outfile/ethanol.out&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ethanol_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ethanol_file</span> <span class="o">=</span> <span class="s2">&quot;data/outfile/ethanol.out&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ethanol_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">outfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="nn">File ~/miniconda3/envs/molssi_best_practices/lib/python3.11/site-packages/IPython/core/interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/outfile/ethanol.out&#39;
 </pre></div>
 </div>
 </div>
