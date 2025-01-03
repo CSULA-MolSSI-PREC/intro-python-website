@@ -126,9 +126,6 @@ html[data-theme="light"] a:visited {
     transition: color .25s,background-color .25s,border-color .25s;
 }
 
-<<<<<<< HEAD
-.admonition.overview>.admonition-title:after, div.admonition.overview>.admonition-title:after {
-=======
 /* Overview admonition icon */
 admonition.overview>.admonition-title:after, div.admonition.overview>.admonition-title:after {
     color: #ffc107;
@@ -144,32 +141,6 @@ admonition.overview>.admonition-title:after, div.admonition.overview>.admonition
 
 /* Overview admonition icon */
 admonition.overview>.admonition-title:before,  div.admonition.overview>.admonition-title:before {
->>>>>>> update lessons and styling
-    position: absolute;
-    left: .6rem;
-    width: 1rem;
-    height: 1rem;
-    color: #ffc107;
-    background-color: #ffc10700;
-    font-family: Font Awesome\ 5 Free;
-    font-weight: 900;
-}
-/* Day-Overview admonition icon - After */
-admonition.day-overview>.admonition-title:after, div.admonition.day-overview>.admonition-title:after {
-    color: #ffc107;
-    content: "\f5fc"; /* Adjust to desired Font Awesome icon code */
-    font: var(--fa-font-solid); /* Use solid icon font */
-    height: 1rem;
-    left: 0.5rem;
-    line-height: inherit;
-    opacity: 1;
-    position: absolute;
-    width: 1rem;
-}
-
-<<<<<<< HEAD
-/* Overview admonition icon */
-.admonition.overview>.admonition-title:before,  div.admonition.overview>.admonition-title:before {
     position: absolute;
     left: .6rem;
     width: 1rem;
@@ -181,26 +152,16 @@ admonition.day-overview>.admonition-title:after, div.admonition.day-overview>.ad
 }
 
 /* day-overview admonition icon */
-.admonition.day-overview>.admonition-title:after, div.admonition.day-overview>.admonition-title:after {
-=======
-/* Day-Overview admonition icon - Before */
 admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.admonition-title:before {
->>>>>>> update lessons and styling
     position: absolute;
     left: .6rem;
     width: 1rem;
     height: 1rem;
     color: #ffc107;
-    background-color: #ffc10700;
-    font-family: "Font Awesome 5 Free"; /* Correct Font Awesome font */
-    font-weight: 900; /* Solid style */
-    content: "\f5fc"; /* Adjust to desired Font Awesome icon code */
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    content: "\f5fc";
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> update lessons and styling
 /**********************************************************************************/
 
 /**********************************************************************************/
@@ -218,13 +179,6 @@ admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.a
 
 /* Exercise Admonition Icon */
 .admonition.exercise>.admonition-title:after, div.admonition.exercise>.admonition-title:after {
-<<<<<<< HEAD
-    position: absolute;
-    left: .6rem;
-    width: 1rem;
-    height: 1rem;
-=======
->>>>>>> update lessons and styling
     color: #fd7e14;
     content: "\f303";
     font: var(--fa-font-solid);
@@ -239,19 +193,6 @@ admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.a
 
 .admonition.exercise>.admonition-title:before, div.admonition.exercise>.admonition-title:before,
 .admonition.solution>.admonition-title:before, div.admonition.solution>.admonition-title:before{
-<<<<<<< HEAD
-    position: absolute;
-    left: .6rem;
-    width: 1rem;
-    height: 1rem;
-    color: #fd7e14;
-    background-color: #fd7e1400;
-}
-
-/* Solution Left Icon */
-.admonition.solution>.admonition-title:after, div.admonition.solution>.admonition-title:after {
-=======
->>>>>>> update lessons and styling
     position: absolute;
     left: .6rem;
     width: 1rem;
@@ -307,20 +248,6 @@ admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.a
         height: 1rem;
         color: #00A300;
         background-color: #00A30000;
-<<<<<<< HEAD
-}
-
-.admonition.key>.admonition-title:after, div.admonition.key>.admonition-title:after {
-    position: absolute;
-    left: .6rem;
-    width: 1rem;
-    height: 1rem;
-    color: #00A300;
-    font-family: Font Awesome\ 5 Free;
-    font-weight: 900;
-    content: "\f084";
-=======
->>>>>>> update lessons and styling
 }
 
 /* Key Icon */
@@ -347,99 +274,38 @@ admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.a
     transition: color .25s,background-color .25s,border-color .25s;
 }
 
+
+/* Day-Overview admonition icon - After */
+admonition.day-overview>.admonition-title:after, div.admonition.day-overview>.admonition-title:after {
+    color: #ffc107;
+    content: "\f5fc"; /* Adjust to desired Font Awesome icon code */
+    font: var(--fa-font-solid); /* Use solid icon font */
+    height: 1rem;
+    left: 0.5rem;
+    line-height: inherit;
+    opacity: 1;
+    position: absolute;
+    width: 1rem;
+}
+
+/* Day-Overview admonition icon - Before */
+admonition.day-overview>.admonition-title:before, div.admonition.day-overview>.admonition-title:before {
+    position: absolute;
+    left: .6rem;
+    width: 1rem;
+    height: 1rem;
+    color: #ffc107;
+    background-color: #ffc10700;
+    font-family: "Font Awesome 5 Free"; /* Correct Font Awesome font */
+    font-weight: 900; /* Solid style */
+    content: "\f5fc"; /* Adjust to desired Font Awesome icon code */
+}
+
 /**********************************************************************************/
 
 .footer-items__start {
 	width: 100%;
   }
-<<<<<<< HEAD
-
-@import "../basic.css";
-
-html[data-theme="light"] {
-    --pst-color-primary: #ed1c24;
-	--pst-color-warning: #ed1c24;
-	--pst-color-primary-highlight: #bc151b;
-	--pst-color-secondary: #1A1A1A;
-	--pst-color-secondary-highlight: #222222;
-
-}
-
-html[data-theme="dark"] {
-    --pst-color-primary: #ed1c24;
-	--pst-color-warning: #ed1c24;
-	--pst-color-primary-highlight: #bc151b;
-	--pst-color-background: #1A1A1A;
-	--pst-color-on-background: #222222;
-	--pst-color-surface: #222222;
-	--pst-color-secondary: #ffffff;
-	--pst-color-secondary-highlight: #ffffffb3;
-}
-
-html[data-theme="light"] a:hover {
-	color: #1A1A1A;
-}
-
-html[data-theme="dark"] h1, html[data-theme="dark"] h2, html[data-theme="dark"] h3, html[data-theme="dark"] h4, html[data-theme="dark"] h5, html[data-theme="dark"] h6 {
-	color: #ffffff;
-}
-
-html[data-theme="light"] a, a:visited {
-	color: var(--pst-color-primary);
-}
-
-html[data-theme="dark"] a, a:visited {
-	color: #ffffff;
-}
-
-html[data-theme="dark"] .reference.external {
-	text-decoration: underline;
-
-}
-
-html[data-theme="dark"] p .reference.internal {
-	text-decoration: underline;
-
-}
-
-html[data-theme="dark"] a:hover {
-	color: #ed1c24;
-}
-
-html[data-theme="dark"] .prev-next-area a p.prev-next-title {
-    color: white;
-}
-
-html[data-theme="dark"] .prev-next-area:hover a:hover p.prev-next-title:hover {
-    color: #ed1c24;
-}
-
-html[data-theme="dark"] dt:target {
-    background-color: #000000;
-}
-
-html .toctree-wrapper li[class^=toctree-l] {
-	list-style: circle;
-}
-
-img:not(.logo__image, .footer_logo) {
-	padding: 20px;
-}
-
-
-.footer_logo {
-	max-height: 60px;
-}
-
-table.border, .border table, .border caption, .border thead, .border tbody, .border th, .border td {
-	border: thin solid gray !important;
-	text-align: center;
-}
-
-.footer-items__start {
-	width: 100%;
-  }
-=======
 
 /* Get rid of side bar , based on https://github.com/executablebooks/sphinx-book-theme/issues/732#issuecomment-1752572223 */
 .bd-sidebar-primary div#rtd-footer-container {
@@ -447,4 +313,3 @@ table.border, .border table, .border caption, .border thead, .border tbody, .bor
     margin:-1rem;
     position:fixed;
     }
->>>>>>> update lessons and styling
