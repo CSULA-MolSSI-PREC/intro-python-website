@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Designing Programs &#8212; MolSSI and Cal State LA Workshop</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=943d174e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-FHKVGE8HKZ"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-FHKVGE8HKZ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-FHKVGE8HKZ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'designing-programs';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analyzing Tabular Data" href="04-tabular-pandas.html" />
+    <link rel="prev" title="Processing Multiple Files and Writing Files" href="03-multiple-file.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/CSLA_MolSSI1.png" class="logo__image only-light" alt="MolSSI and Cal State LA Workshop - Home"/>
+    <img src="_static/CSLA_MolSSI1.png" class="logo__image only-dark pst-js-only" alt="MolSSI and Cal State LA Workshop - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Set Up</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introduction to Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-python-basics.html">Introduction to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-file-parsing.html">File Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging-worksheet.html">Troubleshooting and “Debugging” Python Programs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data Analysis and Plotting</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="03-multiple-file.html">Processing Multiple Files and Writing Files</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Designing Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-tabular-pandas.html">Analyzing Tabular Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging_worksheet.html">Troubleshooting and “Debugging” Python Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-plotting-pandas.html">Plotting and Data Visualization</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MolSSI-Education/WORKSHOP_NAME" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MolSSI-Education/WORKSHOP_NAME/issues/new?title=Issue%20on%20page%20%2Fdesigning-programs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/designing-programs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Designing Programs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-design-recipe">The Design Recipe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-reading-the-final-energy-from-ethanol-out">Example: Reading the Final Energy from ethanol.out</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-analysis">1. Problem Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">2. Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">3. Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">4. Program Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">5. Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">6. Testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="designing-programs">
+<h1>Designing Programs<a class="headerlink" href="#designing-programs" title="Link to this heading">#</a></h1>
+<p>In this worksheet, you will learn and practice how to design programs. You will learn how to use the design recipe to design code, and how to break down a problem into smaller subproblems.</p>
+<section id="the-design-recipe">
+<h2>The Design Recipe<a class="headerlink" href="#the-design-recipe" title="Link to this heading">#</a></h2>
+<p>The design recipe is a systematic way of designing programs. It consists of the following steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Problem analysis</strong>: Understand the problem and its requirements.</p></li>
+<li><p><strong>Data analysis</strong>: Understand the data that the program will work with. You will decide what data you are working with and the types of that data.</p></li>
+<li><p><strong>Examples</strong>: Find examples of the program’s input and output.</p></li>
+<li><p><strong>Program design</strong>: Design the program. You will decide what functions you need, what the functions do, and how they work together. You might write down a series of steps for the program.</p></li>
+<li><p><strong>Implementation</strong>: Implement the program in code. You have to translate everything you have decided in the previous steps into code that the computer understands.</p></li>
+<li><p><strong>Testing</strong>: Test the program to make sure it works correctly. You will run the program with the examples you found in step 3 and make sure the program produces the correct output.</p></li>
+</ol>
+</section>
+<section id="example-reading-the-final-energy-from-ethanol-out">
+<h2>Example: Reading the Final Energy from ethanol.out<a class="headerlink" href="#example-reading-the-final-energy-from-ethanol-out" title="Link to this heading">#</a></h2>
+<p>Yesterday, we wrote code to get the Final Energy from ethanol.out. Let’s see how we can use the design recipe to understand this problem better.</p>
+<section id="problem-analysis">
+<h3>1. Problem Analysis<a class="headerlink" href="#problem-analysis" title="Link to this heading">#</a></h3>
+<p>Looking at our task from yesterday, we wanted to find a specific number in the ethanol.out file. When we open this file, we see it contains many lines of text. Somewhere in this file is a line that has “Final Energy” followed by the number we want. Instead of searching through the file ourselves, we want Python to find this number for us.</p>
+</section>
+<section id="data-analysis">
+<h3>2. Data Analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h3>
+<p>Before we write code, let’s think about what we’re working with:</p>
+<ul class="simple">
+<li><p>We have a file called “ethanol.out” in the data/outfiles directory</p></li>
+<li><p>The file contains lines of text</p></li>
+<li><p>One of these lines has “Final Energy” followed by a number</p></li>
+<li><p>We want to end up with just that number, so we can use it for calculations</p></li>
+</ul>
+</section>
+<section id="examples">
+<h3>3. Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>Let’s be very specific about what we’re looking for. In our file, we might see a line like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Final</span> <span class="n">Energy</span><span class="p">:</span> <span class="o">-</span><span class="mf">123.45</span>
+</pre></div>
+</div>
+<p>We want our program to find this line and give us just the -123.45 part.</p>
+</section>
+<section id="program-design">
+<h3>4. Program Design<a class="headerlink" href="#program-design" title="Link to this heading">#</a></h3>
+<p>If we were doing this by hand, we would:</p>
+<ol class="arabic simple">
+<li><p>Open the file and read all the lines</p></li>
+<li><p>Look through each line until we see “Final Energy”</p></li>
+<li><p>Once we find that line, get just the number part</p></li>
+</ol>
+<p>Now we need to turn each of these steps into Python code.</p>
+</section>
+<section id="implementation">
+<h3>5. Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<p>Let’s translate each of our design steps into Python code. This is where we figure out exactly how to tell Python what we want it to do.</p>
+<p>Step 1: Open and read the file</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/ethanol.out&quot;</span>  <span class="c1"># Tell Python where to find our file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>           <span class="c1"># Open it for reading</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>                <span class="c1"># Get all the lines from the file</span>
+</pre></div>
+</div>
+<p>This puts all the lines from our file into <code class="docutils literal notranslate"><span class="pre">data</span></code>. Think of <code class="docutils literal notranslate"><span class="pre">data</span></code> like a list of all the lines from our file.</p>
+<p>Step 2: Find the line containing “Final Energy”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>                    <span class="c1"># Look at each line one at a time</span>
+    <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>       <span class="c1"># If this line has &quot;Final Energy&quot; in it</span>
+        <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>           <span class="c1"># Save this line - it&#39;s the one we want!</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">energy_line</span></code> contains the whole line with our number in it, like “Final Energy: -123.45”</p>
+<p>Step 3: Get just the number</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>          <span class="c1"># Break the line into pieces at each space</span>
+                                    <span class="c1"># words now looks like: [&quot;Final&quot;, &quot;Energy:&quot;, &quot;-123.45&quot;]</span>
+<span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>            <span class="c1"># Convert the fourth piece to a number</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>                       <span class="c1"># Show us the answer</span>
+</pre></div>
+</div>
+<p>Let’s put it all together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Read the file</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/ethanol.out&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># Step 2: Find the line that has &quot;Final Energy&quot;</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+
+<span class="c1"># Step 3: Get the number from that line</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="testing">
+<h3>6. Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h3>
+<p>When we run this program, it should print out -123.45. We can check if this is right by:</p>
+<ol class="arabic simple">
+<li><p>Opening ethanol.out ourselves</p></li>
+<li><p>Finding the “Final Energy” line</p></li>
+<li><p>Making sure the number we see matches what our program printed</p></li>
+</ol>
+<p>Overall, our code yesterday looked like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the file</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;data/outfiles/ethanol.out&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># Find the line that has the phrase &quot;Final Energy&quot;</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;Final Energy&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">energy_line</span> <span class="o">=</span> <span class="n">line</span>
+
+<span class="c1"># Split the line into words</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">energy_line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">energy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-154.09130176573018
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="your-turn">
+<h2>Your Turn!<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
+<p>Now that you’ve learned about the design recipe. Try applying it to the following problems.</p>
+<p>For each problem, try applying the Design Recipe first. After you have made a plan, then try writing code.</p>
+<ol class="arabic simple">
+<li><p>Write Python code that calculates the area of a rectangle. (Don’t forget to think of and check your answer with examples!)</p></li>
+<li><p>Calculate an average grade given a list of grades.</p></li>
+<li><p>Calculate the average of total energy for an <code class="docutils literal notranslate"><span class="pre">mdout</span></code> file (like 03_Prod.mdout). (Note, this one will be hard to predict, but you can check that pieces of your code work. For example, you might use similar logic to calculating the average grade.)</p></li>
+<li><p>Getting the Final Energy for several files and saving the results in a list.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-multiple-file.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Processing Multiple Files and Writing Files</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-tabular-pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analyzing Tabular Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-design-recipe">The Design Recipe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-reading-the-final-energy-from-ethanol-out">Example: Reading the Final Energy from ethanol.out</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-analysis">1. Problem Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">2. Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">3. Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">4. Program Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">5. Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">6. Testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Molecular Sciences Software Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
