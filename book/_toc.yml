@@ -4,11 +4,13 @@ chapters:
 - file: setup
 - file: day1-overview
   sections:
-  - file: 01-python-introduction
+  - file: 01-python-basics
   - file: 02-file-parsing
-  - file: 03-multiple-file
+  - file: debugging-worksheet
 - file: day2-overview
   sections:
+  - file: 03-multiple-file
+  - file: designing-programs
   - file: 04-tabular-pandas
   - file: debugging_worksheet.md
   - file: 05-plotting-pandas
